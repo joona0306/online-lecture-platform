@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>온라인 강의 플랫폼 - 메인</title>
+  <!-- Swiper CSS -->
+  <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+ </head>
+ <body>
+  <!-- 헤더 -->
+  <header class="header">
+   <div class="container">
+    <div class="header-content">
+     <div class="logo">
+      <a href="index.html">
+       <span class="logo-icon">🔧</span>
+       <span class="logo-text">EduEdu</span>
+      </a>
+     </div>
+
+     <div class="header-center">
+      <!-- 검색 -->
+      <div class="search-box">
+       <label class="sr-only" for="searchInput">강의 검색</label>
+       <span class="search-icon">🔍</span>
+       <input
+        id="searchInput"
+        type="text"
+        placeholder="강의를 검색해보세요"
+        autocomplete="off"
+       />
+       <div class="search-dropdown" id="searchDropdown" style="display: none">
+        <div class="search-dropdown-header">
+         <span>최근 검색어</span>
+         <button class="clear-search" id="clearSearch">전체 삭제</button>
+        </div>
+        <div class="recent-searches" id="recentSearches"></div>
+        <div class="search-dropdown-header">
+         <span>🏔️ 추천 검색어</span>
+        </div>
+        <div class="recommended-searches">
+         <a href="courses.html?query=UX/UI 디자인">UX/UI 디자인</a>
+         <a href="courses.html?query=웹퍼블리싱">웹퍼블리싱</a>
+         <a href="courses.html?query=웹디자인">웹디자인</a>
+        </div>
+       </div>
+      </div>
+     </div>
+
+     <div class="header-actions">
+      <!-- 사용자 -->
+      <div class="user-menu">
+       <a href="login.html" class="btn btn-ghost" id="loginBtn">로그인</a>
+       <div
+        class="user-profile-wrapper"
+        id="userProfileWrapper"
+        style="display: none"
+       >
+        <button class="user-profile-btn" id="userProfileBtn">
+         <img
+          src="https://picsum.photos/40/40?random=100"
+          alt="프로필"
+          class="user-avatar"
+          id="userAvatar"
+         />
+         <span id="userName"></span>
+         <span class="dropdown-icon">▼</span>
+        </button>
+        <div class="user-dropdown" id="userDropdown" style="display: none">
+         <a href="profile.html">마이 페이지</a>
+         <a href="dashboard.html">내 강의보기</a>
+         <a href="#" id="transactionLink">거래내역</a>
+         <a href="#" id="logoutLink">로그아웃</a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero">
+   <div class="container">
+    <div class="hero-layout">
+     <div class="hero-content">
+      <h1>
+       <span class="hero-title-line1">내일을 위한 배움,</span>
+       <span class="hero-title-line2">오늘 시작하세요!</span>
+      </h1>
+      <p class="hero-description">
+       최고의 강사진이 제공하는 실무 중심 커리큘럼! 지금 바로 수강하고! 커리어를
+       성장시키세요!
+      </p>
+      <div class="hero-buttons">
+       <a href="courses.html" class="btn btn-primary">강의 둘러보기</a>
+       <a href="signup.html" class="btn btn-outline">무료로 시작하기</a>
+      </div>
+     </div>
+     <div class="hero-carousel">
+      <div class="swiper hero-swiper">
+       <div class="swiper-wrapper">
+        <div class="swiper-slide">
+         <img src="https://picsum.photos/800/600?random=10" alt="강의 이미지" />
+         <div class="carousel-overlay">
+          <h3>체계적인 로드맵</h3>
+          <p>목표 달성을 위한 확실한 길잡이</p>
+         </div>
+        </div>
+        <div class="swiper-slide">
+         <img src="https://picsum.photos/800/600?random=11" alt="강의 이미지" />
+         <div class="carousel-overlay">
+          <h3>실무 중심 커리큘럼</h3>
+          <p>현장에서 바로 쓸 수 있는 실전 지식</p>
+         </div>
+        </div>
+        <div class="swiper-slide">
+         <img src="https://picsum.photos/800/600?random=12" alt="강의 이미지" />
+         <div class="carousel-overlay">
+          <h3>전문가 강의</h3>
+          <p>업계 최고의 강사진과 함께하는 학습</p>
+         </div>
+        </div>
+       </div>
+       <div class="carousel-controls">
+        <span class="carousel-counter">
+         <span class="swiper-counter-current">1</span>/<span
+          class="swiper-counter-total"
+          >3</span
+         >
+        </span>
+        <button class="carousel-btn swiper-button-prev-custom">‹</button>
+        <button class="carousel-btn swiper-button-play-pause">❚❚</button>
+        <button class="carousel-btn swiper-button-next-custom">›</button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- 인기 강의 섹션 -->
+  <section class="popular-courses">
+   <div class="container">
+    <h2 class="section-title">인기 강의</h2>
+    <div class="courses-grid" id="popularCourses">
+     <!-- 강의 카드가 여기에 동적으로 추가됩니다 -->
+    </div>
+   </div>
+  </section>
+
+  <!-- 신규 강의 섹션 -->
+  <section class="new-courses">
+   <div class="container">
+    <h2 class="section-title">신규 강의</h2>
+    <div class="courses-grid" id="newCourses">
+     <!-- 강의 카드가 여기에 동적으로 추가됩니다 -->
+    </div>
+   </div>
+  </section>
+
+  <!-- 카테고리 섹션 -->
+  <section class="categories">
+   <div class="container">
+    <h2 class="section-title">카테고리</h2>
+    <div class="categories-grid">
+     <div class="category-card" data-category="programming">
+      <img src="https://picsum.photos/400/200?random=1" alt="프로그래밍" />
+      <h3>프로그래밍</h3>
+     </div>
+     <div class="category-card" data-category="design">
+      <img src="https://picsum.photos/400/200?random=2" alt="디자인" />
+      <h3>디자인</h3>
+     </div>
+     <div class="category-card" data-category="marketing">
+      <img src="https://picsum.photos/400/200?random=3" alt="마케팅" />
+      <h3>마케팅</h3>
+     </div>
+     <div class="category-card" data-category="others">
+      <img src="https://picsum.photos/400/200?random=4" alt="기타" />
+      <h3>기타</h3>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+   <div class="container">
+    <div class="footer-content">
+     <div class="footer-section">
+      <h3>회사 정보</h3>
+      <p>온라인 강의 플랫폼</p>
+     </div>
+     <div class="footer-section">
+      <h3>고객센터</h3>
+      <p>전화: 1588-0000</p>
+      <p>이메일: support@learn.com</p>
+     </div>
+    </div>
+   </div>
+  </footer>
+
+  <!-- 스크립트 -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/main.js"></script>
+ </body>
+</html>

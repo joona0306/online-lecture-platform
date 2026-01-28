@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강의 수강 - 온라인 강의 플랫폼</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+ </head>
+ <body>
+  <!-- 헤더 -->
+  <header class="header">
+   <div class="container">
+    <div class="header-content">
+     <div class="logo">
+      <a href="index.html">
+       <span class="logo-icon">🔧</span>
+       <span class="logo-text">EduEdu</span>
+      </a>
+     </div>
+
+     <div class="header-center">
+      <!-- 검색 -->
+      <div class="search-box">
+       <label class="sr-only" for="searchInput">강의 검색</label>
+       <span class="search-icon">🔍</span>
+       <input
+        id="searchInput"
+        type="text"
+        placeholder="강의를 검색해보세요"
+        autocomplete="off"
+       />
+       <div class="search-dropdown" id="searchDropdown" style="display: none">
+        <div class="search-dropdown-header">
+         <span>최근 검색어</span>
+         <button class="clear-search" id="clearSearch">전체 삭제</button>
+        </div>
+        <div class="recent-searches" id="recentSearches"></div>
+        <div class="search-dropdown-header">
+         <span>🏔️ 추천 검색어</span>
+        </div>
+        <div class="recommended-searches">
+         <a href="courses.html?query=UX/UI 디자인">UX/UI 디자인</a>
+         <a href="courses.html?query=웹퍼블리싱">웹퍼블리싱</a>
+         <a href="courses.html?query=웹디자인">웹디자인</a>
+        </div>
+       </div>
+      </div>
+     </div>
+
+     <div class="header-actions">
+      <!-- 사용자 -->
+      <div class="user-menu">
+       <a href="login.html" class="btn btn-ghost" id="loginBtn">로그인</a>
+       <div
+        class="user-profile-wrapper"
+        id="userProfileWrapper"
+        style="display: none"
+       >
+        <button class="user-profile-btn" id="userProfileBtn">
+         <img
+          src="https://picsum.photos/40/40?random=100"
+          alt="프로필"
+          class="user-avatar"
+          id="userAvatar"
+         />
+         <span id="userName"></span>
+         <span class="dropdown-icon">▼</span>
+        </button>
+        <div class="user-dropdown" id="userDropdown" style="display: none">
+         <a href="profile.html">마이 페이지</a>
+         <a href="dashboard.html">내 강의보기</a>
+         <a href="#" id="transactionLink">거래내역</a>
+         <a href="#" id="logoutLink">로그아웃</a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+
+  <!-- 강의 수강 영역 -->
+  <section class="course-player-section">
+   <div class="container">
+    <div class="player-layout">
+     <!-- 비디오 플레이어 영역 -->
+     <div class="player-main">
+      <!-- 비디오 플레이어 -->
+      <div class="video-player-container">
+       <video
+        id="videoPlayer"
+        class="video-player"
+        controls
+        preload="metadata"
+        aria-label="강의 비디오"
+       >
+        <source src="" type="video/mp4" />
+        비디오를 재생할 수 없습니다.
+       </video>
+       <div class="video-error" id="videoError" style="display: none">
+        <p>비디오를 불러올 수 없습니다.</p>
+        <button class="btn btn-primary" id="retryVideo">다시 시도</button>
+       </div>
+      </div>
+
+      <!-- 학습 진도 표시 -->
+      <div class="progress-section">
+       <div class="progress-header">
+        <h3>학습 진도</h3>
+        <span class="progress-percentage" id="progressPercentage">0%</span>
+       </div>
+       <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+       </div>
+       <div class="progress-info">
+        <span id="completedLessons">0</span> /
+        <span id="totalLessons">0</span> 레슨 완료
+       </div>
+      </div>
+
+      <!-- 레슨 네비게이션 -->
+      <div class="lesson-navigation">
+       <button class="btn btn-secondary" id="prevLesson" disabled>
+        이전 레슨
+       </button>
+       <button class="btn btn-primary" id="nextLesson">다음 레슨</button>
+      </div>
+
+      <!-- 레슨 완료 체크 -->
+      <div class="lesson-complete">
+       <label>
+        <input type="checkbox" id="lessonCompleteCheck" />
+        이 레슨을 완료했습니다
+       </label>
+      </div>
+     </div>
+
+     <!-- 강의 정보 사이드바 -->
+     <aside class="player-sidebar">
+      <div class="course-info">
+       <h2 id="courseTitle">강의 제목</h2>
+       <p id="courseInstructor">강사명</p>
+      </div>
+
+      <!-- 커리큘럼 -->
+      <div class="curriculum">
+       <h3>커리큘럼</h3>
+       <div class="curriculum-list" id="curriculumList">
+        <!-- 커리큘럼이 동적으로 추가됩니다 -->
+       </div>
+      </div>
+
+      <!-- 강의 자료 (선택) -->
+      <div class="course-materials" id="courseMaterials" style="display: none">
+       <h3>강의 자료</h3>
+       <a href="#" class="btn btn-secondary" download>자료 다운로드</a>
+      </div>
+     </aside>
+    </div>
+   </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+   <div class="container">
+    <div class="footer-content">
+     <div class="footer-section">
+      <h3>회사 정보</h3>
+      <p>온라인 강의 플랫폼</p>
+     </div>
+     <div class="footer-section">
+      <h3>고객센터</h3>
+      <p>전화: 1588-0000</p>
+      <p>이메일: support@learn.com</p>
+     </div>
+    </div>
+   </div>
+  </footer>
+
+  <!-- 스크립트 -->
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/course-player.js"></script>
+ </body>
+</html>

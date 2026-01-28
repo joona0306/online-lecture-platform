@@ -1,0 +1,115 @@
+/**
+ * responsive.css
+ * - 반응형 디자인
+ */
+
+/* 모바일 (375px 이상) */
+@media (max-width: 767px) {
+ .container {
+  padding: 0 var(--spacing-md);
+ }
+
+ .header-content {
+  flex-wrap: wrap;
+ }
+
+ .nav-menu {
+  order: 3;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  display: none;
+ }
+
+ .nav-menu.active {
+  display: flex;
+ }
+
+ .search-box {
+  flex: 1;
+  min-width: 0;
+ }
+
+ .search-box input {
+  min-width: 0;
+  flex: 1;
+ }
+
+ .hero-layout {
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+ }
+
+ .hero-title-line2 {
+  font-size: var(--font-size-2xl);
+ }
+
+ .hero-buttons {
+  flex-direction: column;
+ }
+
+ .hero-carousel {
+  order: -1;
+ }
+
+ .courses-grid {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--spacing-md);
+ }
+
+ .player-layout {
+  grid-template-columns: 1fr;
+ }
+
+ .player-sidebar {
+  order: -1;
+ }
+
+ .sort-controls {
+  flex-direction: column;
+  align-items: stretch;
+ }
+
+ .filter-sidebar {
+  margin-bottom: var(--spacing-md);
+ }
+
+ .courses-layout {
+  grid-template-columns: 1fr;
+ }
+
+ .course-detail-header {
+  grid-template-columns: 1fr;
+ }
+
+ .dashboard-summary {
+  grid-template-columns: 1fr;
+ }
+
+ .profile-header {
+  flex-direction: column;
+  text-align: center;
+ }
+
+ .profile-stats {
+  grid-template-columns: 1fr;
+ }
+}
+
+/* 태블릿 (768px 이상) */
+@media (min-width: 768px) and (max-width: 1023px) {
+ .courses-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+ }
+
+ .player-layout {
+  grid-template-columns: 1fr 280px;
+ }
+}
+
+/* 데스크톱 (1024px 이상) */
+@media (min-width: 1024px) {
+ .courses-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ }
+}
