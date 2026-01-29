@@ -1,37 +1,7 @@
 /**
  * main.js
- * - 메인 페이지 로직
+ * - 메인 페이지 로직 (헤더/검색/드롭다운은 header.js 사용)
  */
-
-// 로그인 상태 확인 및 UI 업데이트
-function updateAuthUI() {
- const currentUser = getCurrentUser();
- const loginBtn = document.getElementById("loginBtn");
- const userProfileWrapper = document.getElementById("userProfileWrapper");
- const userName = document.getElementById("userName");
-
- if (currentUser) {
-  if (loginBtn) loginBtn.style.display = "none";
-  if (userProfileWrapper) {
-   userProfileWrapper.style.display = "block";
-   if (userName) userName.textContent = `${currentUser.name} 님`;
-  }
- } else {
-  if (loginBtn) loginBtn.style.display = "block";
-  if (userProfileWrapper) userProfileWrapper.style.display = "none";
- }
-
- // UI 업데이트 후 드롭다운 이벤트 다시 설정
- initUserDropdown();
-}
-
-// 로그아웃
-function handleLogout() {
- setCurrentUser(null);
- updateAuthUI();
- showToast("로그아웃되었습니다.");
- window.location.href = "index.html";
-}
 
 // 강의 카드 렌더링
 function renderCourseCard(course) {
@@ -90,106 +60,6 @@ function renderNewCourses() {
  }
 
  container.innerHTML = newCourses.map(renderCourseCard).join("");
-}
-
-// 검색 기능
-function handleSearch() {
- const searchInput = document.getElementById("searchInput");
- const searchDropdown = document.getElementById("searchDropdown");
- const recentSearches = document.getElementById("recentSearches");
- const clearSearch = document.getElementById("clearSearch");
-
- // 최근 검색어 가져오기
- function getRecentSearches() {
-  try {
-   return JSON.parse(localStorage.getItem("recentSearches")) || [];
-  } catch {
-   return [];
-  }
- }
-
- // 최근 검색어 저장
- function saveRecentSearch(query) {
-  let recent = getRecentSearches();
-  recent = recent.filter((q) => q !== query);
-  recent.unshift(query);
-  recent = recent.slice(0, 5); // 최대 5개만 저장
-  localStorage.setItem("recentSearches", JSON.stringify(recent));
- }
-
- // 최근 검색어 렌더링
- function renderRecentSearches() {
-  const recent = getRecentSearches();
-  if (!recentSearches) return;
-
-  if (recent.length === 0) {
-   recentSearches.innerHTML = "";
-   return;
-  }
-
-  recentSearches.innerHTML = recent
-   .map(
-    (query) => `
-      <div class="recent-search-tag">
-        <span onclick="performSearch('${query}')">${escapeHtml(query)}</span>
-        <button class="remove-btn" onclick="removeRecentSearch('${query}')">×</button>
-      </div>
-    `
-   )
-   .join("");
- }
-
- // 검색어 제거
- window.removeRecentSearch = function (query) {
-  let recent = getRecentSearches();
-  recent = recent.filter((q) => q !== query);
-  localStorage.setItem("recentSearches", JSON.stringify(recent));
-  renderRecentSearches();
- };
-
- // 검색 실행
- window.performSearch = function (query) {
-  if (query) {
-   saveRecentSearch(query);
-   window.location.href = `courses.html?query=${encodeURIComponent(query)}`;
-  }
- };
-
- // 검색 입력 이벤트
- if (searchInput) {
-  searchInput.addEventListener("focus", () => {
-   if (searchDropdown) {
-    searchDropdown.style.display = "block";
-    renderRecentSearches();
-   }
-  });
-
-  searchInput.addEventListener("blur", (e) => {
-   // 드롭다운 클릭 시에는 닫히지 않도록
-   setTimeout(() => {
-    if (searchDropdown && !searchDropdown.contains(document.activeElement)) {
-     searchDropdown.style.display = "none";
-    }
-   }, 200);
-  });
-
-  searchInput.addEventListener("keypress", (e) => {
-   if (e.key === "Enter") {
-    const query = searchInput.value.trim();
-    if (query) {
-     performSearch(query);
-    }
-   }
-  });
- }
-
- // 전체 삭제
- if (clearSearch) {
-  clearSearch.addEventListener("click", () => {
-   localStorage.removeItem("recentSearches");
-   renderRecentSearches();
-  });
- }
 }
 
 // 카테고리 클릭
@@ -281,55 +151,6 @@ function initCarousel() {
     playPauseBtn.textContent = "❚❚";
     isPlaying = true;
    }
-  });
- }
-}
-
-// 사용자 드롭다운
-let userDropdownHandler = null;
-
-function initUserDropdown() {
- const userProfileBtn = document.getElementById("userProfileBtn");
- const userDropdown = document.getElementById("userDropdown");
- const logoutLink = document.getElementById("logoutLink");
-
- // 기존 이벤트 리스너 제거
- if (userDropdownHandler && userProfileBtn) {
-  userProfileBtn.removeEventListener("click", userDropdownHandler);
- }
-
- if (userProfileBtn && userDropdown) {
-  // 클릭 이벤트 핸들러
-  userDropdownHandler = function (e) {
-   e.stopPropagation();
-   const isVisible = userDropdown.style.display === "block";
-   userDropdown.style.display = isVisible ? "none" : "block";
-  };
-
-  userProfileBtn.addEventListener("click", userDropdownHandler);
- }
-
- // 외부 클릭 시 닫기 (전역 이벤트는 한 번만 등록)
- if (!window.userDropdownGlobalHandler) {
-  window.userDropdownGlobalHandler = function (e) {
-   const userProfileBtn = document.getElementById("userProfileBtn");
-   const userDropdown = document.getElementById("userDropdown");
-   if (userProfileBtn && userDropdown) {
-    if (
-     !userProfileBtn.contains(e.target) &&
-     !userDropdown.contains(e.target)
-    ) {
-     userDropdown.style.display = "none";
-    }
-   }
-  };
-  document.addEventListener("click", window.userDropdownGlobalHandler);
- }
-
- if (logoutLink) {
-  logoutLink.addEventListener("click", (e) => {
-   e.preventDefault();
-   handleLogout();
   });
  }
 }
