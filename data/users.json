@@ -1,0 +1,232 @@
+[
+ {
+  "id": 1,
+  "name": "홍길동",
+  "email": "hong@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-01-01",
+  "bio": "10년차 풀스택 개발자입니다. JavaScript, TypeScript, Node.js, React, Vue.js 전문입니다."
+ },
+ {
+  "id": 2,
+  "name": "이영희",
+  "email": "lee@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-01-01",
+  "bio": "8년차 UI/UX 디자이너입니다. Figma, Adobe 도구 전문입니다."
+ },
+ {
+  "id": 3,
+  "name": "박강사",
+  "email": "park@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-01-01",
+  "bio": "디지털 마케팅 전문가입니다. SNS 마케팅, SEO 분야에서 활동하고 있습니다."
+ },
+ {
+  "id": 4,
+  "name": "김데이터",
+  "email": "kim.data@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-01-15",
+  "bio": "데이터 사이언티스트입니다. Python, SQL, 머신러닝 전문입니다."
+ },
+ {
+  "id": 5,
+  "name": "최모바일",
+  "email": "choi.mobile@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-01-20",
+  "bio": "모바일 앱 개발자입니다. Flutter, Swift, Kotlin 전문입니다."
+ },
+ {
+  "id": 6,
+  "name": "제임스",
+  "email": "james@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-02-01",
+  "bio": "비즈니스 영어 강사입니다. 15년간 기업 영어 교육을 진행했습니다."
+ },
+ {
+  "id": 7,
+  "name": "정클라우드",
+  "email": "jung.cloud@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-02-10",
+  "bio": "AWS 공인 솔루션 아키텍트입니다. 클라우드 인프라 전문입니다."
+ },
+ {
+  "id": 8,
+  "name": "강창업",
+  "email": "kang.startup@example.com",
+  "password": "1234",
+  "role": "instructor",
+  "avatar": "",
+  "createdAt": "2024-02-15",
+  "bio": "연쇄 창업가입니다. 3개의 스타트업을 성공적으로 엑싯했습니다."
+ },
+ {
+  "id": 100,
+  "name": "김학생",
+  "email": "student1@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-02-01",
+  "bio": "프론트엔드 개발자를 꿈꾸는 학생입니다."
+ },
+ {
+  "id": 101,
+  "name": "이수강",
+  "email": "student2@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-02-05",
+  "bio": "백엔드 개발에 관심있는 대학생입니다."
+ },
+ {
+  "id": 102,
+  "name": "박열정",
+  "email": "student3@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-02-10",
+  "bio": "디자인과 코딩 둘 다 배우고 싶어요!"
+ },
+ {
+  "id": 103,
+  "name": "최배움",
+  "email": "student4@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-02-15",
+  "bio": "데이터 분석가를 목표로 공부 중입니다."
+ },
+ {
+  "id": 104,
+  "name": "정노력",
+  "email": "student5@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-02-20",
+  "bio": "모바일 앱 개발자가 되고 싶습니다."
+ },
+ {
+  "id": 105,
+  "name": "강성실",
+  "email": "student6@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-02-25",
+  "bio": "마케팅 직무로 취업 준비 중인 취준생입니다."
+ },
+ {
+  "id": 106,
+  "name": "윤도전",
+  "email": "student7@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-03-01",
+  "bio": "클라우드 엔지니어를 꿈꾸고 있습니다."
+ },
+ {
+  "id": 107,
+  "name": "한꿈나무",
+  "email": "student8@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-03-05",
+  "bio": "스타트업 창업이 목표입니다!"
+ },
+ {
+  "id": 108,
+  "name": "조코딩",
+  "email": "student9@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-03-10",
+  "bio": "비전공자지만 개발자가 되고 싶어요."
+ },
+ {
+  "id": 109,
+  "name": "신열심",
+  "email": "student10@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-03-15",
+  "bio": "직장인 투잡러입니다. 새로운 스킬을 배우고 있어요."
+ },
+ {
+  "id": 110,
+  "name": "오성장",
+  "email": "student11@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-03-20",
+  "bio": "대학원생입니다. 연구에 필요한 스킬을 배우고 있습니다."
+ },
+ {
+  "id": 111,
+  "name": "임전환",
+  "email": "student12@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-03-25",
+  "bio": "경력 전환을 준비 중인 10년차 직장인입니다."
+ },
+ {
+  "id": 112,
+  "name": "송미래",
+  "email": "student13@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-04-01",
+  "bio": "고등학생입니다. 진로 탐색 중이에요."
+ },
+ {
+  "id": 113,
+  "name": "유창의",
+  "email": "student14@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-04-05",
+  "bio": "UX 디자이너로 일하고 있지만 코딩도 배우고 싶어요."
+ },
+ {
+  "id": 114,
+  "name": "권실력",
+  "email": "student15@example.com",
+  "password": "1234",
+  "role": "student",
+  "avatar": "",
+  "createdAt": "2024-04-10",
+  "bio": "주니어 개발자입니다. 실력 향상을 위해 공부 중입니다."
+ }
+]

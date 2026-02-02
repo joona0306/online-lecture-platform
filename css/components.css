@@ -1,79 +1,142 @@
 /**
  * components.css
- * - 재사용 가능한 컴포넌트 스타일
+ * - shadcn/ui 스타일 기반 재사용 컴포넌트
  */
 
-/* 버튼 */
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
 .btn {
- display: inline-block;
- padding: var(--spacing-sm) var(--spacing-lg);
- font-size: var(--font-size-base);
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: var(--spacing-sm);
+ padding: 0.5rem 1rem;
+ font-size: var(--font-size-sm);
  font-weight: 500;
  text-align: center;
  text-decoration: none;
  border: none;
  border-radius: var(--radius-md);
  cursor: pointer;
- transition: all 0.2s;
- min-height: 44px;
+ transition: all var(--transition-fast);
+ min-height: 40px;
  line-height: 1.5;
+ white-space: nowrap;
+}
+
+.btn:disabled {
+ pointer-events: none;
+ opacity: 0.5;
+}
+
+.btn:focus-visible {
+ outline: 2px solid var(--color-primary);
+ outline-offset: 2px;
 }
 
 .btn-primary {
- background-color: var(--primary);
- color: var(--white);
+ background-color: var(--color-primary);
+ color: white;
 }
 
 .btn-primary:hover {
- background-color: var(--primary-dark);
-}
-
-.btn-primary:disabled {
- background-color: var(--gray-200);
- color: var(--gray-500);
- cursor: not-allowed;
+ background-color: var(--color-primary-hover);
 }
 
 .btn-secondary {
- background-color: transparent;
- color: var(--primary);
- border: 1px solid var(--primary);
+ background-color: var(--color-muted);
+ color: var(--color-foreground);
+ border: 1px solid var(--color-border);
 }
 
 .btn-secondary:hover {
- background-color: var(--primary);
- color: var(--white);
+ background-color: var(--color-border);
 }
 
-.btn-secondary:disabled {
- border-color: var(--gray-200);
- color: var(--gray-500);
- cursor: not-allowed;
+.btn-outline {
+ background-color: transparent;
+ color: var(--color-primary);
+ border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+ background-color: var(--color-muted);
+ border-color: var(--color-primary);
 }
 
 .btn-ghost {
  background-color: transparent;
- color: var(--text-primary);
- border: none;
+ color: var(--color-foreground);
 }
 
 .btn-ghost:hover {
- background-color: var(--bg-secondary);
+ background-color: var(--color-muted);
 }
 
-/* 강의 카드 */
+.btn-destructive {
+ background-color: var(--color-destructive);
+ color: white;
+}
+
+.btn-destructive:hover {
+ background-color: hsl(0 84.2% 50%);
+}
+
+.btn-sm {
+ padding: 0.25rem 0.75rem;
+ font-size: var(--font-size-xs);
+ min-height: 32px;
+}
+
+.btn-lg {
+ padding: 0.75rem 1.5rem;
+ font-size: var(--font-size-base);
+ min-height: 48px;
+}
+
+.btn-block {
+ display: flex;
+ width: 100%;
+}
+
+.btn-icon {
+ width: 40px;
+ height: 40px;
+ padding: 0;
+}
+
+.btn-icon.btn-sm {
+ width: 32px;
+ height: 32px;
+}
+
+/* ============================================================================
+   Course Cards
+   ============================================================================ */
+
 .courses-grid {
  display: grid;
- grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ grid-template-columns: repeat(3, 1fr);
  gap: var(--spacing-lg);
 }
 
+/* 빈 상태가 grid 안에 있을 때 전체 너비 차지 */
+.courses-grid > .empty-state {
+ grid-column: 1 / -1;
+ padding: var(--spacing-2xl);
+ background: var(--color-muted);
+ border-radius: var(--radius-lg);
+ text-align: center;
+}
+
 .course-card {
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-lg);
  overflow: hidden;
- transition: transform 0.2s, box-shadow 0.2s;
+ transition: all var(--transition-base);
  cursor: pointer;
  text-decoration: none;
  color: inherit;
@@ -81,15 +144,15 @@
 }
 
 .course-card:hover {
- transform: translateY(-4px);
- box-shadow: var(--shadow-lg);
+ box-shadow: var(--shadow-md);
+ border-color: var(--color-primary);
 }
 
 .course-card-thumbnail {
  width: 100%;
- height: 200px;
+ height: 180px;
  object-fit: cover;
- background-color: var(--gray-100);
+ background-color: var(--color-muted);
 }
 
 .course-card-content {
@@ -97,18 +160,19 @@
 }
 
 .course-card-title {
- font-size: var(--font-size-lg);
+ font-size: var(--font-size-base);
  font-weight: 600;
- margin-bottom: var(--spacing-sm);
+ margin-bottom: var(--spacing-xs);
  display: -webkit-box;
  -webkit-line-clamp: 2;
  -webkit-box-orient: vertical;
  overflow: hidden;
+ line-height: 1.4;
 }
 
 .course-card-instructor {
  font-size: var(--font-size-sm);
- color: var(--text-secondary);
+ color: var(--color-muted-foreground);
  margin-bottom: var(--spacing-sm);
 }
 
@@ -124,39 +188,43 @@
  display: flex;
  align-items: center;
  gap: var(--spacing-xs);
+ color: var(--color-foreground);
 }
 
 .star {
- color: var(--gray-200);
- font-size: var(--font-size-sm);
+ color: var(--color-border);
+ font-size: var(--font-size-xs);
 }
 
 .star.filled {
- color: var(--warning);
+ color: var(--color-warning);
 }
 
 .star.half {
- color: var(--warning);
+ color: var(--color-warning);
  opacity: 0.5;
 }
 
 .course-card-price {
- font-size: var(--font-size-lg);
- font-weight: bold;
- color: var(--primary);
+ font-size: var(--font-size-base);
+ font-weight: 700;
+ color: var(--color-foreground);
 }
 
 .course-card-students {
- color: var(--text-secondary);
- font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-xs);
 }
 
-/* 비디오 플레이어 */
+/* ============================================================================
+   Video Player
+   ============================================================================ */
+
 .video-player-container {
  position: relative;
  width: 100%;
- background: var(--black);
- border-radius: var(--radius-md);
+ background: var(--color-foreground);
+ border-radius: var(--radius-lg);
  overflow: hidden;
  margin-bottom: var(--spacing-lg);
  aspect-ratio: 16 / 9;
@@ -174,17 +242,20 @@
  left: 50%;
  transform: translate(-50%, -50%);
  text-align: center;
- color: var(--white);
- background: rgba(0, 0, 0, 0.8);
+ color: white;
+ background: rgba(0, 0, 0, 0.9);
  padding: var(--spacing-lg);
- border-radius: var(--radius-md);
+ border-radius: var(--radius-lg);
 }
 
-/* 학습 진도 */
+/* ============================================================================
+   Progress
+   ============================================================================ */
+
 .progress-section {
- background: var(--bg-secondary);
- padding: var(--spacing-lg);
- border-radius: var(--radius-md);
+ background: var(--color-muted);
+ padding: var(--spacing-md);
+ border-radius: var(--radius-lg);
  margin-bottom: var(--spacing-lg);
 }
 
@@ -192,61 +263,40 @@
  display: flex;
  justify-content: space-between;
  align-items: center;
- margin-bottom: var(--spacing-md);
+ margin-bottom: var(--spacing-sm);
 }
 
 .progress-percentage {
- font-size: var(--font-size-xl);
- font-weight: bold;
- color: var(--primary);
+ font-size: var(--font-size-lg);
+ font-weight: 700;
+ color: var(--color-foreground);
 }
 
 .progress-bar {
  width: 100%;
- height: 12px;
- background: var(--gray-200);
- border-radius: 6px;
+ height: 8px;
+ background: var(--color-border);
+ border-radius: var(--radius-full);
  overflow: hidden;
- margin-bottom: var(--spacing-sm);
+ margin-bottom: var(--spacing-xs);
 }
 
 .progress-fill {
  height: 100%;
- background: var(--primary);
- transition: width 0.3s ease;
+ background: var(--color-primary);
+ transition: width var(--transition-slow);
+ border-radius: var(--radius-full);
 }
 
 .progress-info {
  font-size: var(--font-size-sm);
- color: var(--text-secondary);
+ color: var(--color-muted-foreground);
 }
 
-/* 레슨 네비게이션 */
-.lesson-navigation {
- display: flex;
- gap: var(--spacing-md);
- margin-bottom: var(--spacing-lg);
-}
+/* ============================================================================
+   Player Layout
+   ============================================================================ */
 
-.lesson-navigation button {
- flex: 1;
-}
-
-/* 레슨 완료 체크 */
-.lesson-complete {
- padding: var(--spacing-md);
- background: var(--bg-secondary);
- border-radius: var(--radius-md);
-}
-
-.lesson-complete label {
- display: flex;
- align-items: center;
- gap: var(--spacing-sm);
- cursor: pointer;
-}
-
-/* 플레이어 레이아웃 */
 .player-layout {
  display: grid;
  grid-template-columns: 1fr 320px;
@@ -261,24 +311,54 @@
  min-width: 0;
 }
 
-/* 커리큘럼 */
+.lesson-navigation {
+ display: flex;
+ gap: var(--spacing-sm);
+ margin-bottom: var(--spacing-lg);
+}
+
+.lesson-navigation button {
+ flex: 1;
+}
+
+.lesson-complete {
+ padding: var(--spacing-md);
+ background: var(--color-muted);
+ border-radius: var(--radius-lg);
+ border: 1px solid var(--color-border);
+}
+
+.lesson-complete label {
+ display: flex;
+ align-items: center;
+ gap: var(--spacing-sm);
+ cursor: pointer;
+ font-size: var(--font-size-sm);
+}
+
+/* ============================================================================
+   Curriculum
+   ============================================================================ */
+
 .curriculum {
  margin-bottom: var(--spacing-lg);
 }
 
 .curriculum h3 {
- font-size: var(--font-size-lg);
+ font-size: var(--font-size-base);
+ font-weight: 600;
  margin-bottom: var(--spacing-md);
 }
 
 .curriculum-section {
- margin-bottom: var(--spacing-lg);
+ margin-bottom: var(--spacing-md);
 }
 
 .curriculum-section h4 {
- font-size: var(--font-size-base);
+ font-size: var(--font-size-sm);
  font-weight: 600;
- margin-bottom: var(--spacing-sm);
+ margin-bottom: var(--spacing-xs);
+ color: var(--color-muted-foreground);
 }
 
 .lesson-list {
@@ -287,39 +367,49 @@
 
 .lesson-item {
  padding: var(--spacing-sm) var(--spacing-md);
- border-radius: var(--radius-sm);
- margin-bottom: var(--spacing-xs);
+ border-radius: var(--radius-md);
+ margin-bottom: 2px;
+ border: 1px solid transparent;
 }
 
 .lesson-item a {
- color: var(--text-primary);
+ color: var(--color-foreground);
  text-decoration: none;
  display: block;
+ font-size: var(--font-size-sm);
 }
 
 .lesson-item:hover {
- background-color: var(--bg-secondary);
+ background-color: var(--color-muted);
 }
 
 .lesson-item.active {
- background-color: var(--primary-light);
- color: var(--white);
+ background-color: var(--color-primary);
+ color: white;
 }
 
 .lesson-item.active a {
- color: var(--white);
+ color: white;
 }
 
 .lesson-item.completed a::after {
- content: " ✓";
- color: var(--success);
+ content: " [Completed]";
+ color: var(--color-success);
+ font-size: var(--font-size-xs);
 }
 
-/* 필터 */
+.lesson-item.active.completed a::after {
+ color: white;
+}
+
+/* ============================================================================
+   Filters
+   ============================================================================ */
+
 .filter-sidebar {
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-lg);
  padding: var(--spacing-lg);
  margin-bottom: var(--spacing-lg);
 }
@@ -333,30 +423,33 @@
 }
 
 .filter-group h3 {
- font-size: var(--font-size-base);
+ font-size: var(--font-size-sm);
  font-weight: 600;
- margin-bottom: var(--spacing-md);
+ margin-bottom: var(--spacing-sm);
 }
 
 .filter-option {
  display: flex;
  align-items: center;
  gap: var(--spacing-sm);
- margin-bottom: var(--spacing-sm);
+ margin-bottom: var(--spacing-xs);
  cursor: pointer;
 }
 
 .filter-option input[type="checkbox"],
 .filter-option input[type="radio"] {
  cursor: pointer;
+ width: 16px;
+ height: 16px;
 }
 
 .filter-option label {
  cursor: pointer;
  flex: 1;
+ font-size: var(--font-size-sm);
 }
 
-/* 정렬 */
+/* Sort Controls */
 .sort-controls {
  display: flex;
  align-items: center;
@@ -367,38 +460,44 @@
 
 .sort-select {
  padding: var(--spacing-sm) var(--spacing-md);
- border: 1px solid var(--border-color);
+ border: 1px solid var(--color-border);
  border-radius: var(--radius-md);
  font-size: var(--font-size-sm);
  cursor: pointer;
+ background-color: var(--color-background);
 }
 
-/* 페이지네이션 */
+/* ============================================================================
+   Pagination
+   ============================================================================ */
+
 .pagination {
  display: flex;
  justify-content: center;
  align-items: center;
- gap: var(--spacing-sm);
+ gap: var(--spacing-xs);
  margin-top: var(--spacing-xl);
 }
 
 .pagination button {
  padding: var(--spacing-sm) var(--spacing-md);
- border: 1px solid var(--border-color);
- background-color: var(--bg-primary);
+ border: 1px solid var(--color-border);
+ background-color: var(--color-background);
  border-radius: var(--radius-md);
  cursor: pointer;
  min-width: 40px;
+ font-size: var(--font-size-sm);
+ transition: all var(--transition-fast);
 }
 
 .pagination button:hover:not(:disabled) {
- background-color: var(--bg-secondary);
+ background-color: var(--color-muted);
 }
 
 .pagination button.active {
- background-color: var(--primary);
- color: var(--white);
- border-color: var(--primary);
+ background-color: var(--color-primary);
+ color: white;
+ border-color: var(--color-primary);
 }
 
 .pagination button:disabled {
@@ -406,12 +505,15 @@
  cursor: not-allowed;
 }
 
-/* 후기 카드 */
+/* ============================================================================
+   Reviews
+   ============================================================================ */
+
 .review-card {
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
- padding: var(--spacing-lg);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-lg);
+ padding: var(--spacing-md);
  margin-bottom: var(--spacing-md);
 }
 
@@ -424,59 +526,68 @@
 
 .review-author {
  font-weight: 600;
+ font-size: var(--font-size-sm);
 }
 
 .review-date {
- font-size: var(--font-size-sm);
- color: var(--text-secondary);
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
 }
 
 .review-rating {
  display: flex;
  align-items: center;
- gap: var(--spacing-xs);
+ gap: 2px;
  margin-bottom: var(--spacing-sm);
 }
 
 .review-content {
- color: var(--text-primary);
+ color: var(--color-foreground);
  line-height: 1.6;
+ font-size: var(--font-size-sm);
 }
 
-/* 카테고리 카드 */
+/* ============================================================================
+   Categories
+   ============================================================================ */
+
 .categories-grid {
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
- gap: var(--spacing-lg);
+ gap: var(--spacing-md);
 }
 
 .category-card {
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-lg);
  overflow: hidden;
  cursor: pointer;
- transition: transform 0.2s, box-shadow 0.2s;
+ transition: all var(--transition-base);
  text-align: center;
 }
 
 .category-card:hover {
- transform: translateY(-4px);
+ border-color: var(--color-primary);
  box-shadow: var(--shadow-md);
 }
 
 .category-card img {
  width: 100%;
- height: 150px;
+ height: 120px;
  object-fit: cover;
 }
 
 .category-card h3 {
  padding: var(--spacing-md);
- font-size: var(--font-size-lg);
+ font-size: var(--font-size-base);
+ font-weight: 600;
 }
 
-/* 강의 상세 페이지 */
+/* ============================================================================
+   Course Detail
+   ============================================================================ */
+
 .course-detail-header {
  display: grid;
  grid-template-columns: 1fr 1fr;
@@ -486,17 +597,19 @@
 
 .course-detail-thumbnail img {
  width: 100%;
- border-radius: var(--radius-md);
+ border-radius: var(--radius-lg);
 }
 
 .course-detail-info h1 {
  font-size: var(--font-size-2xl);
+ font-weight: 700;
  margin-bottom: var(--spacing-md);
+ line-height: 1.3;
 }
 
 .course-instructor {
- font-size: var(--font-size-lg);
- color: var(--text-secondary);
+ font-size: var(--font-size-base);
+ color: var(--color-muted-foreground);
  margin-bottom: var(--spacing-md);
 }
 
@@ -505,6 +618,7 @@
  align-items: center;
  gap: var(--spacing-lg);
  margin-bottom: var(--spacing-md);
+ flex-wrap: wrap;
 }
 
 .course-rating {
@@ -514,17 +628,18 @@
 }
 
 .course-reviews {
- color: var(--text-secondary);
+ color: var(--color-muted-foreground);
  font-size: var(--font-size-sm);
 }
 
 .course-students {
- color: var(--text-secondary);
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-sm);
 }
 
 .course-details {
  display: flex;
- gap: var(--spacing-md);
+ gap: var(--spacing-sm);
  margin-bottom: var(--spacing-md);
  flex-wrap: wrap;
 }
@@ -532,21 +647,21 @@
 .course-category,
 .course-level,
 .course-duration {
- padding: var(--spacing-xs) var(--spacing-md);
- background-color: var(--bg-secondary);
+ padding: var(--spacing-xs) var(--spacing-sm);
+ background-color: var(--color-muted);
  border-radius: var(--radius-md);
- font-size: var(--font-size-sm);
+ font-size: var(--font-size-xs);
 }
 
 .course-price {
  font-size: var(--font-size-2xl);
- font-weight: bold;
- color: var(--primary);
- margin-bottom: var(--spacing-lg);
+ font-weight: 700;
+ color: var(--color-foreground);
+ margin-bottom: var(--spacing-md);
 }
 
 .course-actions {
- margin-top: var(--spacing-lg);
+ margin-top: var(--spacing-md);
 }
 
 .course-detail-body {
@@ -561,18 +676,19 @@
 .course-curriculum h2,
 .course-reviews-section h2 {
  font-size: var(--font-size-xl);
- margin-bottom: var(--spacing-lg);
+ font-weight: 700;
+ margin-bottom: var(--spacing-md);
 }
 
 .course-description p {
  line-height: 1.8;
- color: var(--text-primary);
+ color: var(--color-foreground);
 }
 
 .curriculum-content {
- background-color: var(--bg-secondary);
+ background-color: var(--color-muted);
  padding: var(--spacing-lg);
- border-radius: var(--radius-md);
+ border-radius: var(--radius-lg);
 }
 
 .curriculum-lessons {
@@ -584,7 +700,7 @@
  align-items: center;
  gap: var(--spacing-md);
  padding: var(--spacing-md);
- border-bottom: 1px solid var(--border-color);
+ border-bottom: 1px solid var(--color-border);
 }
 
 .curriculum-lesson:last-child {
@@ -592,22 +708,23 @@
 }
 
 .lesson-icon {
- color: var(--primary);
+ color: var(--color-primary);
 }
 
 .lesson-title {
  flex: 1;
-}
-
-.lesson-duration {
- color: var(--text-secondary);
  font-size: var(--font-size-sm);
 }
 
+.lesson-duration {
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-xs);
+}
+
 .preview-badge {
- padding: var(--spacing-xs) var(--spacing-sm);
- background-color: var(--primary);
- color: var(--white);
+ padding: 2px var(--spacing-xs);
+ background-color: var(--color-primary);
+ color: white;
  border-radius: var(--radius-sm);
  font-size: var(--font-size-xs);
 }
@@ -624,21 +741,23 @@
 
 .reviews-rating {
  font-size: var(--font-size-2xl);
- font-weight: bold;
+ font-weight: 700;
 }
 
 .reviews-stars {
  display: flex;
- gap: var(--spacing-xs);
+ gap: 2px;
 }
 
 .reviews-count {
- color: var(--text-secondary);
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-sm);
 }
 
+/* Rating Input */
 .rating-input {
  display: flex;
- gap: var(--spacing-sm);
+ gap: var(--spacing-xs);
  flex-direction: row-reverse;
 }
 
@@ -647,34 +766,38 @@
 }
 
 .rating-input .star-label {
- font-size: var(--font-size-2xl);
- color: var(--gray-200);
+ font-size: var(--font-size-xl);
+ color: var(--color-border);
  cursor: pointer;
- transition: color 0.2s;
+ transition: color var(--transition-fast);
 }
 
 .rating-input input[type="radio"]:checked ~ .star-label,
 .rating-input input[type="radio"]:checked + .star-label,
 .rating-input .star-label:hover,
 .rating-input .star-label:hover ~ .star-label {
- color: var(--warning);
+ color: var(--color-warning);
 }
 
 .form-actions {
  display: flex;
  gap: var(--spacing-md);
- margin-top: var(--spacing-lg);
+ margin-top: var(--spacing-md);
 }
 
-/* 폼 */
+/* ============================================================================
+   Forms
+   ============================================================================ */
+
 .form-group {
- margin-bottom: var(--spacing-lg);
+ margin-bottom: var(--spacing-md);
 }
 
 .form-group label {
  display: block;
- margin-bottom: var(--spacing-sm);
+ margin-bottom: var(--spacing-xs);
  font-weight: 500;
+ font-size: var(--font-size-sm);
 }
 
 .form-group input,
@@ -682,27 +805,36 @@
 .form-group select {
  width: 100%;
  padding: var(--spacing-sm) var(--spacing-md);
- border: 1px solid var(--border-color);
+ border: 1px solid var(--color-border);
  border-radius: var(--radius-md);
- font-size: var(--font-size-base);
+ font-size: var(--font-size-sm);
  font-family: inherit;
+ background-color: var(--color-background);
+ transition: all var(--transition-fast);
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
  outline: none;
- border-color: var(--primary);
+ border-color: var(--color-primary);
+ box-shadow: 0 0 0 2px hsl(var(--primary) / 0.1);
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.form-group select:focus-visible {
+ outline: none;
 }
 
 .form-group textarea {
  resize: vertical;
- min-height: 120px;
+ min-height: 100px;
 }
 
 .form-error {
- color: var(--error);
- font-size: var(--font-size-sm);
+ color: var(--color-destructive);
+ font-size: var(--font-size-xs);
  margin-top: var(--spacing-xs);
 }
 
@@ -712,33 +844,40 @@
  gap: var(--spacing-xl);
 }
 
-/* 대시보드 */
+/* ============================================================================
+   Dashboard
+   ============================================================================ */
+
+.dashboard-section {
+ padding: var(--spacing-2xl) 0;
+}
+
 .dashboard-summary {
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
- gap: var(--spacing-lg);
+ gap: var(--spacing-md);
  margin-bottom: var(--spacing-2xl);
 }
 
 .summary-card {
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-lg);
  padding: var(--spacing-lg);
  text-align: center;
 }
 
 .summary-card h3 {
- font-size: var(--font-size-base);
- color: var(--text-secondary);
- margin-bottom: var(--spacing-md);
+ font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+ margin-bottom: var(--spacing-sm);
+ font-weight: 500;
 }
 
 .summary-value {
  font-size: var(--font-size-2xl);
- font-weight: bold;
- color: var(--primary);
- margin-bottom: var(--spacing-md);
+ font-weight: 700;
+ color: var(--color-foreground);
 }
 
 .dashboard-section-content {
@@ -747,21 +886,39 @@
 
 .dashboard-section-content h2 {
  font-size: var(--font-size-xl);
- margin-bottom: var(--spacing-lg);
+ font-weight: 700;
+ margin-bottom: var(--spacing-md);
 }
 
 .course-progress {
- margin: var(--spacing-md) 0;
+ margin: var(--spacing-sm) 0;
 }
 
 .progress-text {
- font-size: var(--font-size-sm);
- color: var(--text-secondary);
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
  margin-top: var(--spacing-xs);
  display: block;
 }
 
-/* 인증 페이지 */
+/* Dashboard Header */
+.dashboard-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: var(--spacing-md);
+ margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-header .section-title {
+ margin-bottom: 0;
+}
+
+/* ============================================================================
+   Auth Pages
+   ============================================================================ */
+
 .auth-section {
  min-height: calc(100vh - 200px);
  display: flex;
@@ -773,14 +930,15 @@
 .auth-container {
  max-width: 400px;
  width: 100%;
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-xl);
  padding: var(--spacing-2xl);
 }
 
 .auth-container h1 {
  text-align: center;
+ font-size: var(--font-size-xl);
  margin-bottom: var(--spacing-xl);
 }
 
@@ -788,97 +946,104 @@
  margin-bottom: var(--spacing-lg);
 }
 
-.btn-block {
- width: 100%;
-}
-
 .auth-footer {
  text-align: center;
- color: var(--text-secondary);
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-sm);
 }
 
 .auth-footer a {
- color: var(--primary);
+ color: var(--color-primary);
  text-decoration: none;
+ font-weight: 500;
 }
 
 .auth-footer a:hover {
  text-decoration: underline;
 }
 
-/* 프로필 페이지 */
+/* ============================================================================
+   Profile
+   ============================================================================ */
+
+.profile-section {
+ padding: var(--spacing-2xl) 0;
+}
+
 .profile-header {
  display: flex;
  align-items: center;
  gap: var(--spacing-xl);
  margin-bottom: var(--spacing-2xl);
  padding: var(--spacing-xl);
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-xl);
 }
 
 .avatar-circle {
- width: 100px;
- height: 100px;
- border-radius: 50%;
- background-color: var(--primary);
- color: var(--white);
+ width: 80px;
+ height: 80px;
+ border-radius: var(--radius-full);
+ background-color: var(--color-primary);
+ color: white;
  display: flex;
  align-items: center;
  justify-content: center;
  font-size: var(--font-size-2xl);
- font-weight: bold;
+ font-weight: 700;
 }
 
 .profile-info h1 {
- margin-bottom: var(--spacing-sm);
+ font-size: var(--font-size-xl);
+ margin-bottom: var(--spacing-xs);
 }
 
 .profile-email {
- color: var(--text-secondary);
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-sm);
  margin-bottom: var(--spacing-xs);
 }
 
 .profile-role {
  display: inline-block;
- padding: var(--spacing-xs) var(--spacing-md);
- background-color: var(--bg-secondary);
+ padding: var(--spacing-xs) var(--spacing-sm);
+ background-color: var(--color-muted);
  border-radius: var(--radius-md);
- font-size: var(--font-size-sm);
+ font-size: var(--font-size-xs);
  margin-bottom: var(--spacing-xs);
 }
 
 .profile-joined {
- color: var(--text-secondary);
- font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-xs);
 }
 
 .profile-stats {
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
- gap: var(--spacing-lg);
+ gap: var(--spacing-md);
  margin-bottom: var(--spacing-2xl);
 }
 
 .stat-card {
- background-color: var(--bg-card);
- border: 1px solid var(--border-color);
- border-radius: var(--radius-md);
+ background-color: var(--color-card);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-lg);
  padding: var(--spacing-lg);
  text-align: center;
 }
 
 .stat-card h3 {
- font-size: var(--font-size-base);
- color: var(--text-secondary);
- margin-bottom: var(--spacing-md);
+ font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+ margin-bottom: var(--spacing-sm);
 }
 
 .stat-value {
  font-size: var(--font-size-2xl);
- font-weight: bold;
- color: var(--primary);
+ font-weight: 700;
+ color: var(--color-foreground);
 }
 
 .profile-courses {
@@ -887,5 +1052,966 @@
 
 .profile-courses h2 {
  font-size: var(--font-size-xl);
+ font-weight: 700;
+ margin-bottom: var(--spacing-md);
+}
+
+/* ============================================================================
+   Enrolled Status
+   ============================================================================ */
+
+.enrolled-status {
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-md);
+}
+
+.enrolled-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: var(--spacing-xs);
+ background-color: var(--color-success);
+ color: white;
+ padding: var(--spacing-xs) var(--spacing-sm);
+ border-radius: var(--radius-full);
+ font-weight: 600;
+ font-size: var(--font-size-xs);
+ width: fit-content;
+}
+
+.enrolled-icon {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 16px;
+ height: 16px;
+ background: white;
+ color: var(--color-success);
+ border-radius: var(--radius-full);
+ font-size: 10px;
+ font-weight: 700;
+}
+
+.enrolled-progress {
+ background: var(--color-muted);
+ border-radius: var(--radius-lg);
+ padding: var(--spacing-md);
+ border: 1px solid var(--color-border);
+}
+
+.enrolled-progress .progress-info {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: var(--spacing-xs);
+ font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+}
+
+.enrolled-progress .progress-percentage {
+ font-weight: 600;
+ color: var(--color-foreground);
+}
+
+.enrolled-progress .progress-bar {
+ height: 6px;
+ background: var(--color-border);
+ border-radius: var(--radius-full);
+ overflow: hidden;
+}
+
+.enrolled-progress .progress-fill {
+ height: 100%;
+ background: var(--color-primary);
+ border-radius: var(--radius-full);
+ transition: width var(--transition-slow);
+}
+
+.enrolled-progress .progress-detail {
+ margin-top: var(--spacing-xs);
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+ text-align: right;
+}
+
+/* ============================================================================
+   Header Cart Icon
+   ============================================================================ */
+
+.cart-icon-link {
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 40px;
+ height: 40px;
+ text-decoration: none;
+ border-radius: var(--radius-lg);
+ transition: background-color var(--transition-fast);
+ color: var(--color-foreground);
+}
+
+.cart-icon-link:hover {
+ background-color: var(--color-muted);
+}
+
+.cart-icon {
+ font-size: var(--font-size-base);
+}
+
+.cart-badge {
+ position: absolute;
+ top: 2px;
+ right: 2px;
+ background: var(--color-destructive);
+ color: white;
+ font-size: 10px;
+ font-weight: 700;
+ min-width: 16px;
+ height: 16px;
+ border-radius: var(--radius-full);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0 4px;
+}
+
+/* ============================================================================
+   Purchase Buttons
+   ============================================================================ */
+
+.purchase-buttons {
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-sm);
+}
+
+.purchase-buttons .btn {
+ text-align: center;
+}
+
+/* ============================================================================
+   Cart Page
+   ============================================================================ */
+
+.cart-section {
+ padding: var(--spacing-2xl) 0;
+ min-height: 60vh;
+}
+
+.cart-layout {
+ display: grid;
+ grid-template-columns: 1fr 360px;
+ gap: var(--spacing-xl);
+ align-items: start;
+}
+
+/* 장바구니가 비어있을 때 1열 레이아웃 */
+.cart-layout:has(.empty-cart) {
+ grid-template-columns: 1fr;
+}
+
+@media (max-width: 992px) {
+ .cart-layout {
+  grid-template-columns: 1fr;
+ }
+}
+
+.empty-cart {
+ text-align: center;
+ padding: var(--spacing-3xl) var(--spacing-lg);
+ background: var(--color-muted);
+ border-radius: var(--radius-xl);
+ grid-column: 1 / -1;
+}
+
+.empty-cart-icon {
+ font-size: var(--font-size-3xl);
+ margin-bottom: var(--spacing-md);
+ color: var(--color-muted-foreground);
+}
+
+.empty-cart h2 {
+ font-size: var(--font-size-xl);
+ margin-bottom: var(--spacing-xs);
+}
+
+.empty-cart p {
+ color: var(--color-muted-foreground);
  margin-bottom: var(--spacing-lg);
+}
+
+.cart-header {
+ padding-bottom: var(--spacing-md);
+ border-bottom: 1px solid var(--color-border);
+ margin-bottom: var(--spacing-md);
+}
+
+.cart-count {
+ font-weight: 600;
+ font-size: var(--font-size-sm);
+}
+
+.cart-item {
+ display: flex;
+ align-items: center;
+ gap: var(--spacing-md);
+ padding: var(--spacing-md);
+ background: var(--color-card);
+ border-radius: var(--radius-lg);
+ border: 1px solid var(--color-border);
+ margin-bottom: var(--spacing-sm);
+}
+
+.cart-item-thumbnail {
+ flex-shrink: 0;
+ width: 120px;
+ height: 68px;
+ border-radius: var(--radius-md);
+ overflow: hidden;
+}
+
+.cart-item-thumbnail img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+.cart-item-info {
+ flex: 1;
+ min-width: 0;
+}
+
+.cart-item-title {
+ font-size: var(--font-size-sm);
+ font-weight: 600;
+ margin-bottom: var(--spacing-xs);
+}
+
+.cart-item-title a {
+ color: var(--color-foreground);
+ text-decoration: none;
+}
+
+.cart-item-title a:hover {
+ color: var(--color-primary);
+}
+
+.cart-item-instructor {
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+ margin-bottom: var(--spacing-xs);
+}
+
+.cart-item-meta {
+ display: flex;
+ gap: var(--spacing-md);
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+}
+
+.cart-item-price {
+ font-weight: 700;
+ color: var(--color-foreground);
+ white-space: nowrap;
+ font-size: var(--font-size-sm);
+ flex-shrink: 0;
+}
+
+.remove-item-btn {
+ flex-shrink: 0;
+ width: 36px;
+ height: 36px;
+ border: none;
+ background: transparent;
+ border-radius: var(--radius-md);
+ cursor: pointer;
+ color: var(--color-muted-foreground);
+ transition: all var(--transition-fast);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-left: var(--spacing-sm);
+}
+
+.remove-item-btn:hover {
+ background: hsl(0 84.2% 60.2% / 0.1);
+ color: var(--color-destructive);
+}
+
+/* Cart/Checkout Summary */
+.cart-summary .summary-card,
+.checkout-summary .summary-card {
+ background: var(--color-card);
+ border-radius: var(--radius-xl);
+ border: 1px solid var(--color-border);
+ padding: var(--spacing-lg);
+}
+
+.cart-summary .summary-card.sticky,
+.checkout-summary .summary-card.sticky {
+ position: sticky;
+ top: calc(var(--spacing-lg) + 72px);
+}
+
+.summary-card h2 {
+ font-size: var(--font-size-base);
+ font-weight: 600;
+ margin-bottom: var(--spacing-md);
+}
+
+.summary-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: var(--spacing-xs) 0;
+ font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+}
+
+.summary-row.total {
+ font-size: var(--font-size-base);
+ font-weight: 600;
+ color: var(--color-foreground);
+}
+
+.summary-row .total-price {
+ font-size: var(--font-size-lg);
+ color: var(--color-foreground);
+}
+
+.summary-row .discount {
+ color: var(--color-destructive);
+}
+
+.summary-divider {
+ height: 1px;
+ background: var(--color-border);
+ margin: var(--spacing-md) 0;
+}
+
+.checkout-btn {
+ font-size: var(--font-size-base);
+ padding: var(--spacing-md);
+}
+
+/* ============================================================================
+   Checkout Page
+   ============================================================================ */
+
+.checkout-section {
+ padding: var(--spacing-2xl) 0;
+ min-height: 60vh;
+}
+
+.checkout-layout {
+ display: grid;
+ grid-template-columns: 1fr 360px;
+ gap: var(--spacing-xl);
+ align-items: start;
+}
+
+@media (max-width: 992px) {
+ .checkout-layout {
+  grid-template-columns: 1fr;
+ }
+}
+
+.checkout-card {
+ background: var(--color-card);
+ border-radius: var(--radius-xl);
+ border: 1px solid var(--color-border);
+ padding: var(--spacing-lg);
+ margin-bottom: var(--spacing-md);
+}
+
+.checkout-card h2 {
+ font-size: var(--font-size-base);
+ font-weight: 600;
+ margin-bottom: var(--spacing-md);
+ padding-bottom: var(--spacing-sm);
+ border-bottom: 1px solid var(--color-border);
+}
+
+.order-item {
+ display: flex;
+ gap: var(--spacing-md);
+ padding: var(--spacing-sm) 0;
+ border-bottom: 1px solid var(--color-muted);
+}
+
+.order-item:last-child {
+ border-bottom: none;
+}
+
+.order-item-thumbnail {
+ flex-shrink: 0;
+ width: 80px;
+ height: 45px;
+ border-radius: var(--radius-md);
+ overflow: hidden;
+}
+
+.order-item-thumbnail img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+.order-item-info {
+ flex: 1;
+ min-width: 0;
+}
+
+.order-item-info h3 {
+ font-size: var(--font-size-sm);
+ font-weight: 600;
+ margin-bottom: 2px;
+}
+
+.order-item-info p {
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+}
+
+.order-item-price {
+ font-weight: 600;
+ color: var(--color-foreground);
+ font-size: var(--font-size-sm);
+ white-space: nowrap;
+}
+
+/* Payment Methods */
+.payment-methods {
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-sm);
+}
+
+.payment-method-option {
+ display: block;
+ cursor: pointer;
+}
+
+.payment-method-option input {
+ display: none;
+}
+
+.payment-method-label {
+ display: flex;
+ align-items: center;
+ gap: var(--spacing-md);
+ padding: var(--spacing-md);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius-lg);
+ transition: all var(--transition-fast);
+}
+
+.payment-method-option input:checked + .payment-method-label {
+ border-color: var(--color-primary);
+ background: var(--color-muted);
+}
+
+.payment-icon {
+ font-size: var(--font-size-lg);
+ width: 24px;
+ text-align: center;
+}
+
+.payment-name {
+ font-weight: 500;
+ font-size: var(--font-size-sm);
+}
+
+/* Terms Agreement */
+.terms-agreement {
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-sm);
+}
+
+.checkbox-label {
+ display: flex;
+ align-items: center;
+ gap: var(--spacing-sm);
+ cursor: pointer;
+ font-size: var(--font-size-sm);
+}
+
+.checkbox-label input[type="checkbox"] {
+ width: 16px;
+ height: 16px;
+ cursor: pointer;
+}
+
+.terms-list {
+ padding-left: var(--spacing-lg);
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-xs);
+}
+
+.terms-list .checkbox-label {
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-xs);
+}
+
+.pay-btn {
+ font-size: var(--font-size-base);
+ padding: var(--spacing-md);
+}
+
+.checkout-notice {
+ text-align: center;
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+ margin-top: var(--spacing-sm);
+}
+
+.payment-complete-info {
+ text-align: left;
+ background: var(--color-muted);
+ padding: var(--spacing-md);
+ border-radius: var(--radius-lg);
+ margin-top: var(--spacing-sm);
+}
+
+.payment-complete-info p {
+ margin-bottom: var(--spacing-xs);
+ font-size: var(--font-size-sm);
+}
+
+.payment-complete-info p:last-child {
+ margin-bottom: 0;
+}
+
+/* ============================================================================
+   Orders Page
+   ============================================================================ */
+
+.orders-section {
+ padding: var(--spacing-2xl) 0;
+ min-height: 60vh;
+}
+
+.empty-orders {
+ text-align: center;
+ padding: var(--spacing-3xl) var(--spacing-lg);
+ background: var(--color-muted);
+ border-radius: var(--radius-xl);
+}
+
+.empty-orders-icon {
+ font-size: var(--font-size-3xl);
+ margin-bottom: var(--spacing-md);
+ color: var(--color-muted-foreground);
+}
+
+.empty-orders h2 {
+ font-size: var(--font-size-xl);
+ margin-bottom: var(--spacing-xs);
+}
+
+.empty-orders p {
+ color: var(--color-muted-foreground);
+ margin-bottom: var(--spacing-lg);
+}
+
+.order-card {
+ background: var(--color-card);
+ border-radius: var(--radius-xl);
+ border: 1px solid var(--color-border);
+ margin-bottom: var(--spacing-md);
+ overflow: hidden;
+}
+
+.order-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: var(--spacing-md);
+ background: var(--color-muted);
+ border-bottom: 1px solid var(--color-border);
+}
+
+.order-info {
+ display: flex;
+ flex-direction: column;
+ gap: 2px;
+}
+
+.order-id {
+ font-weight: 600;
+ font-size: var(--font-size-sm);
+}
+
+.order-date {
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+}
+
+.order-status {
+ padding: var(--spacing-xs) var(--spacing-sm);
+ border-radius: var(--radius-full);
+ font-size: var(--font-size-xs);
+ font-weight: 600;
+}
+
+.status-completed {
+ background: hsl(142.1 76.2% 36.3% / 0.1);
+ color: var(--color-success);
+}
+
+.status-pending {
+ background: hsl(47.9 95.8% 53.1% / 0.2);
+ color: hsl(26 83.3% 14.1%);
+}
+
+.status-cancelled,
+.status-refunded {
+ background: var(--color-muted);
+ color: var(--color-muted-foreground);
+}
+
+.order-items {
+ padding: var(--spacing-md);
+}
+
+.order-card .order-item {
+ display: flex;
+ gap: var(--spacing-md);
+ padding: var(--spacing-sm) 0;
+ border-bottom: 1px solid var(--color-muted);
+ align-items: center;
+}
+
+.order-card .order-item:last-child {
+ border-bottom: none;
+}
+
+.order-card .order-item.refunded {
+ opacity: 0.6;
+}
+
+.order-card .order-item-thumbnail {
+ width: 60px;
+ height: 34px;
+}
+
+.order-card .order-item-info {
+ flex: 1;
+}
+
+.order-card .order-item-info h3 {
+ font-size: var(--font-size-sm);
+ margin-bottom: 2px;
+}
+
+.order-card .order-item-info h3 a {
+ color: var(--color-foreground);
+ text-decoration: none;
+}
+
+.order-card .order-item-info h3 a:hover {
+ color: var(--color-primary);
+}
+
+.refund-badge {
+ display: inline-block;
+ background: var(--color-muted);
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-xs);
+ padding: 2px 6px;
+ border-radius: var(--radius-sm);
+ margin-right: var(--spacing-xs);
+}
+
+.refund-date {
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+}
+
+.order-card .order-item-price {
+ text-align: right;
+}
+
+.order-card .order-item-price.refunded .original-price {
+ text-decoration: line-through;
+ color: var(--color-muted-foreground);
+ font-size: var(--font-size-xs);
+}
+
+.order-card .order-item-price .refund-amount {
+ display: block;
+ color: var(--color-destructive);
+ font-size: var(--font-size-sm);
+}
+
+.btn-danger {
+ background-color: var(--color-destructive);
+ color: white;
+ border: none;
+}
+
+.btn-danger:hover {
+ background-color: hsl(0 84.2% 50%);
+}
+
+.no-refund-notice {
+ font-size: var(--font-size-xs);
+ color: var(--color-muted-foreground);
+}
+
+.order-footer {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: var(--spacing-md);
+ background: var(--color-muted);
+ border-top: 1px solid var(--color-border);
+}
+
+.payment-method {
+ font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+}
+
+.order-total {
+ text-align: right;
+}
+
+.order-total span:first-child {
+ font-size: var(--font-size-sm);
+ color: var(--color-muted-foreground);
+ margin-right: var(--spacing-sm);
+}
+
+.total-amount {
+ font-size: var(--font-size-lg);
+ font-weight: 700;
+ color: var(--color-foreground);
+}
+
+/* ============================================================================
+   Section Header with Navigation
+   ============================================================================ */
+
+.section-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: var(--spacing-lg);
+}
+
+.section-header .section-title {
+ margin-bottom: 0;
+}
+
+.section-link {
+ display: inline-flex;
+ align-items: center;
+ gap: var(--spacing-xs);
+ font-size: var(--font-size-sm);
+ font-weight: 500;
+ color: var(--color-muted-foreground);
+ text-decoration: none;
+ transition: color var(--transition-fast);
+}
+
+.section-link:hover {
+ color: var(--color-primary);
+}
+
+.section-link svg {
+ transition: transform var(--transition-fast);
+}
+
+.section-link:hover svg {
+ transform: translateX(2px);
+}
+
+/* 검색 결과 페이지 타이틀 */
+.courses-section .section-title {
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: var(--spacing-md);
+}
+
+.back-to-all-link {
+ display: inline-flex;
+ align-items: center;
+ gap: var(--spacing-xs);
+ font-size: var(--font-size-sm);
+ font-weight: 500;
+ color: var(--color-primary);
+ text-decoration: none;
+ transition: color var(--transition-fast);
+}
+
+.back-to-all-link:hover {
+ color: var(--color-primary-hover);
+}
+
+.back-to-all-link svg {
+ transition: transform var(--transition-fast);
+}
+
+.back-to-all-link:hover svg {
+ transform: translateX(2px);
+}
+
+/* ============================================================================
+   Swiper Container with Side Navigation
+   ============================================================================ */
+
+.swiper-container {
+ position: relative;
+}
+
+.swiper-nav-btn {
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 10;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 44px;
+ height: 44px;
+ border: 1px solid rgba(0, 0, 0, 0.1);
+ border-radius: var(--radius-full);
+ background: rgba(255, 255, 255, 0.85);
+ color: var(--color-foreground);
+ cursor: pointer;
+ transition: all var(--transition-fast);
+ box-shadow: var(--shadow-md);
+}
+
+.swiper-nav-btn:hover:not(:disabled) {
+ background: rgba(255, 255, 255, 0.95);
+ color: var(--color-foreground);
+ border-color: rgba(0, 0, 0, 0.15);
+}
+
+.swiper-nav-btn:focus-visible {
+ outline: 2px solid var(--color-primary);
+ outline-offset: 2px;
+}
+
+.swiper-nav-btn:disabled,
+.swiper-nav-btn.swiper-button-disabled {
+ opacity: 0.4;
+ cursor: not-allowed;
+}
+
+.swiper-nav-btn.swiper-button-lock {
+ display: flex;
+}
+
+.swiper-nav-prev {
+ left: -22px;
+}
+
+.swiper-nav-next {
+ right: -22px;
+}
+
+/* 모바일에서 버튼 숨기기 */
+@media (max-width: 768px) {
+ .swiper-nav-btn {
+  display: none;
+ }
+}
+
+/* ============================================================================
+   Courses Swiper
+   ============================================================================ */
+
+.courses-swiper {
+ overflow: hidden;
+}
+
+.courses-swiper .swiper-slide {
+ height: auto;
+}
+
+.courses-swiper .course-card {
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+.courses-swiper .course-card-content {
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+}
+
+.courses-swiper .course-card-price {
+ margin-top: auto;
+}
+
+/* ============================================================================
+   Responsive
+   ============================================================================ */
+
+@media (max-width: 768px) {
+ .course-detail-header {
+  grid-template-columns: 1fr;
+ }
+
+ .hero-layout {
+  grid-template-columns: 1fr;
+ }
+
+ .player-layout {
+  grid-template-columns: 1fr;
+ }
+
+ .courses-layout {
+  grid-template-columns: 1fr;
+ }
+
+ .dashboard-header {
+  flex-direction: column;
+  align-items: flex-start;
+ }
+
+ .dashboard-header .btn {
+  width: 100%;
+  justify-content: center;
+ }
+
+ .cart-item {
+  flex-wrap: wrap;
+ }
+
+ .cart-item-thumbnail {
+  width: 80px;
+  height: 45px;
+ }
+
+ .cart-item-price {
+  width: 100%;
+  text-align: right;
+  margin-top: var(--spacing-sm);
+ }
+
+ .order-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+ }
+
+ .order-footer {
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+ }
+
+ .order-total {
+  text-align: left;
+  width: 100%;
+ }
 }

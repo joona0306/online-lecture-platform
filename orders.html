@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>강의 상세 - 온라인 강의 플랫폼</title>
+  <title>거래 내역 - 온라인 강의 플랫폼</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
@@ -12,14 +12,14 @@
   <!-- 헤더 (웹 컴포넌트) -->
   <app-header></app-header>
 
-  <!-- 강의 상세 섹션 -->
-  <section class="course-detail-section">
+  <!-- 거래 내역 섹션 -->
+  <section class="orders-section">
    <div class="container">
-    <div id="courseDetailContent">
-     <!-- 강의 정보가 여기에 동적으로 추가됩니다 -->
-     <div class="loading-spinner" role="status" aria-label="로딩 중">
-      <div class="spinner"></div>
-     </div>
+    <h1 class="section-title">거래 내역</h1>
+
+    <!-- 주문 내역 목록 -->
+    <div class="orders-list" id="ordersList">
+     <!-- 주문 내역이 동적으로 추가됩니다 -->
     </div>
    </div>
   </section>
@@ -28,6 +28,6 @@
   <app-footer></app-footer>
 
   <!-- ES 모듈 방식의 앱 진입점 -->
-  <script type="module" src="js/app.js" data-page="course-detail"></script>
+  <script type="module" src="js/app.js" data-page="orders"></script>
  </body>
 </html>

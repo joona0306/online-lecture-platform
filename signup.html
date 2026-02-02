@@ -9,68 +9,38 @@
   <link rel="stylesheet" href="css/responsive.css" />
  </head>
  <body>
-  <!-- 헤더 -->
-  <header class="header">
-   <div class="container">
-    <div class="header-content">
-     <div class="logo">
-      <a href="index.html">
-       <span class="logo-icon">🔧</span>
-       <span class="logo-text">EduEdu</span>
-      </a>
-     </div>
-
-     <div class="header-center">
-      <!-- 검색 -->
-      <div class="search-box">
-       <label class="sr-only" for="searchInput">강의 검색</label>
-       <span class="search-icon">🔍</span>
-       <input
-        id="searchInput"
-        type="text"
-        placeholder="강의를 검색해보세요"
-        autocomplete="off"
-       />
-       <div class="search-dropdown" id="searchDropdown" style="display: none">
-        <div class="search-dropdown-header">
-         <span>최근 검색어</span>
-         <button class="clear-search" id="clearSearch">전체 삭제</button>
-        </div>
-        <div class="recent-searches" id="recentSearches"></div>
-        <div class="search-dropdown-header">
-         <span>🏔️ 추천 검색어</span>
-        </div>
-        <div class="recommended-searches">
-         <a href="courses.html?query=UX/UI 디자인">UX/UI 디자인</a>
-         <a href="courses.html?query=웹퍼블리싱">웹퍼블리싱</a>
-         <a href="courses.html?query=웹디자인">웹디자인</a>
-        </div>
-       </div>
-      </div>
-     </div>
-
-     <div class="header-actions">
-      <a href="login.html" class="btn btn-ghost">로그인</a>
-     </div>
-    </div>
-   </div>
-  </header>
+  <!-- 헤더 (웹 컴포넌트) - 회원가입 페이지에서는 로그인 링크 표시 -->
+  <app-header show-auth-link="signup"></app-header>
 
   <!-- 회원가입 섹션 -->
   <section class="auth-section">
    <div class="container">
     <div class="auth-container">
      <h1>회원가입</h1>
-     <form id="signupForm" class="auth-form">
+     <form id="signupForm" class="auth-form" novalidate>
       <div class="form-group">
        <label for="name">이름</label>
-       <input type="text" id="name" name="name" required />
+       <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        required 
+        autocomplete="name"
+        placeholder="이름을 입력하세요"
+       />
        <div class="form-error" id="nameError"></div>
       </div>
 
       <div class="form-group">
        <label for="email">이메일</label>
-       <input type="email" id="email" name="email" required />
+       <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        autocomplete="email"
+        placeholder="example@email.com"
+       />
        <div class="form-error" id="emailError"></div>
       </div>
 
@@ -82,6 +52,8 @@
         name="password"
         required
         minlength="4"
+        autocomplete="new-password"
+        placeholder="4자 이상 입력하세요"
        />
        <div class="form-error" id="passwordError"></div>
       </div>
@@ -93,6 +65,8 @@
         id="passwordConfirm"
         name="passwordConfirm"
         required
+        autocomplete="new-password"
+        placeholder="비밀번호를 다시 입력하세요"
        />
        <div class="form-error" id="passwordConfirmError"></div>
       </div>
@@ -116,27 +90,10 @@
    </div>
   </section>
 
-  <!-- 푸터 -->
-  <footer class="footer">
-   <div class="container">
-    <div class="footer-content">
-     <div class="footer-section">
-      <h3>회사 정보</h3>
-      <p>온라인 강의 플랫폼</p>
-     </div>
-     <div class="footer-section">
-      <h3>고객센터</h3>
-      <p>전화: 1588-0000</p>
-      <p>이메일: support@learn.com</p>
-     </div>
-    </div>
-   </div>
-  </footer>
+  <!-- 푸터 (웹 컴포넌트) -->
+  <app-footer></app-footer>
 
-  <!-- 스크립트 -->
-  <script src="js/storage.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/header.js"></script>
-  <script src="js/auth.js"></script>
+  <!-- ES 모듈 방식의 앱 진입점 -->
+  <script type="module" src="js/app.js" data-page="signup"></script>
  </body>
 </html>

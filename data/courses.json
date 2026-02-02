@@ -1,0 +1,1113 @@
+[
+ {
+  "id": 1,
+  "title": "JavaScript 기초부터 실전까지",
+  "instructorId": 1,
+  "instructor": "홍길동",
+  "category": "programming",
+  "price": 49000,
+  "thumbnail": "https://picsum.photos/400/225?random=1",
+  "description": "JavaScript의 기초부터 실전 프로젝트까지 체계적으로 학습합니다. 변수, 함수, 객체, 비동기 처리 등 핵심 개념을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 1,
+    "title": "섹션 1: JavaScript 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 1,
+      "title": "변수와 데이터 타입",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 1200,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 2,
+      "title": "함수와 스코프",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     },
+     {
+      "id": 3,
+      "title": "객체와 배열",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 1500,
+      "order": 3,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "title": "섹션 2: 실전 프로젝트",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 4,
+      "title": "DOM 조작",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 2000,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 5,
+      "title": "이벤트 처리",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 1600,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 8100,
+  "level": "beginner",
+  "rating": 4.6,
+  "reviews": 120,
+  "students": 1500,
+  "createdAt": "2024-01-15T10:30:00"
+ },
+ {
+  "id": 2,
+  "title": "React 완벽 가이드",
+  "instructorId": 1,
+  "instructor": "홍길동",
+  "category": "programming",
+  "price": 69000,
+  "thumbnail": "https://picsum.photos/400/225?random=2",
+  "description": "React의 핵심 개념부터 고급 패턴까지 학습합니다. Hooks, Context API, 상태 관리 등을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 3,
+    "title": "섹션 1: React 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 6,
+      "title": "컴포넌트 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 1800,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 7,
+      "title": "Props와 State",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 2000,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 3800,
+  "level": "intermediate",
+  "rating": 4.8,
+  "reviews": 89,
+  "students": 2100,
+  "createdAt": "2024-01-20T10:30:00"
+ },
+ {
+  "id": 3,
+  "title": "UI/UX 디자인 기초",
+  "instructorId": 2,
+  "instructor": "이영희",
+  "category": "design",
+  "price": 39000,
+  "thumbnail": "https://picsum.photos/400/225?random=3",
+  "description": "UI/UX 디자인의 기본 원칙과 실무 프로세스를 학습합니다. 사용자 중심 디자인을 이해합니다.",
+  "curriculum": [
+   {
+    "id": 4,
+    "title": "섹션 1: 디자인 원칙",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 8,
+      "title": "색상과 타이포그래피",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 1500,
+      "order": 1,
+      "isPreview": true
+     }
+    ]
+   }
+  ],
+  "duration": 1500,
+  "level": "beginner",
+  "rating": 4.5,
+  "reviews": 67,
+  "students": 980,
+  "createdAt": "2024-01-25T10:30:00"
+ },
+ {
+  "id": 4,
+  "title": "디지털 마케팅 전략",
+  "instructorId": 3,
+  "instructor": "박강사",
+  "category": "marketing",
+  "price": 0,
+  "thumbnail": "https://picsum.photos/400/225?random=4",
+  "description": "디지털 마케팅의 핵심 전략과 실무 노하우를 학습합니다. SEO, SNS 마케팅 등을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 5,
+    "title": "섹션 1: 마케팅 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 9,
+      "title": "마케팅 전략 수립",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreet.mp4",
+      "duration": 1400,
+      "order": 1,
+      "isPreview": true
+     }
+    ]
+   }
+  ],
+  "duration": 1400,
+  "level": "beginner",
+  "rating": 4.3,
+  "reviews": 45,
+  "students": 750,
+  "createdAt": "2024-01-28T10:30:00"
+ },
+ {
+  "id": 5,
+  "title": "Python으로 배우는 데이터 분석",
+  "instructorId": 4,
+  "instructor": "김데이터",
+  "category": "data",
+  "price": 59000,
+  "thumbnail": "https://picsum.photos/400/225?random=5",
+  "description": "Python과 Pandas를 활용한 실무 데이터 분석 기법을 학습합니다. 데이터 시각화와 통계 분석을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 6,
+    "title": "섹션 1: Python 데이터 분석 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 10,
+      "title": "Pandas 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 1800,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 11,
+      "title": "데이터 전처리",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 2200,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 7,
+    "title": "섹션 2: 데이터 시각화",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 12,
+      "title": "Matplotlib 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 1600,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 13,
+      "title": "Seaborn 고급 시각화",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 1900,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 7500,
+  "level": "intermediate",
+  "rating": 4.7,
+  "reviews": 156,
+  "students": 1850,
+  "createdAt": "2024-02-01T10:30:00"
+ },
+ {
+  "id": 6,
+  "title": "Node.js 백엔드 개발",
+  "instructorId": 1,
+  "instructor": "홍길동",
+  "category": "programming",
+  "price": 79000,
+  "thumbnail": "https://picsum.photos/400/225?random=6",
+  "description": "Node.js와 Express를 활용한 서버 개발을 학습합니다. REST API 설계와 데이터베이스 연동을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 8,
+    "title": "섹션 1: Node.js 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 14,
+      "title": "Node.js 환경 설정",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 1200,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 15,
+      "title": "Express 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 2000,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 9,
+    "title": "섹션 2: REST API 개발",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 16,
+      "title": "RESTful API 설계",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 2400,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 17,
+      "title": "MongoDB 연동",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 2800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 8400,
+  "level": "intermediate",
+  "rating": 4.9,
+  "reviews": 203,
+  "students": 2800,
+  "createdAt": "2024-02-05T10:30:00"
+ },
+ {
+  "id": 7,
+  "title": "Figma 마스터 클래스",
+  "instructorId": 2,
+  "instructor": "이영희",
+  "category": "design",
+  "price": 55000,
+  "thumbnail": "https://picsum.photos/400/225?random=7",
+  "description": "Figma를 활용한 UI 디자인과 프로토타이핑을 학습합니다. 컴포넌트 시스템과 협업 기능을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 10,
+    "title": "섹션 1: Figma 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 18,
+      "title": "Figma 인터페이스",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 1400,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 19,
+      "title": "프레임과 레이아웃",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 11,
+    "title": "섹션 2: 컴포넌트 시스템",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 20,
+      "title": "컴포넌트 만들기",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 2000,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 21,
+      "title": "Auto Layout 활용",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 2200,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 7400,
+  "level": "beginner",
+  "rating": 4.8,
+  "reviews": 178,
+  "students": 2200,
+  "createdAt": "2024-02-10T10:30:00"
+ },
+ {
+  "id": 8,
+  "title": "Flutter 앱 개발 입문",
+  "instructorId": 5,
+  "instructor": "최모바일",
+  "category": "mobile",
+  "price": 65000,
+  "thumbnail": "https://picsum.photos/400/225?random=8",
+  "description": "Flutter로 iOS와 Android 앱을 동시에 개발하는 방법을 학습합니다. Dart 언어와 위젯 시스템을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 12,
+    "title": "섹션 1: Flutter 시작하기",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 22,
+      "title": "Flutter 환경 설정",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 1500,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 23,
+      "title": "Dart 언어 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 2200,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 13,
+    "title": "섹션 2: 위젯과 레이아웃",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 24,
+      "title": "기본 위젯",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 2000,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 25,
+      "title": "레이아웃 위젯",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 7500,
+  "level": "beginner",
+  "rating": 4.6,
+  "reviews": 134,
+  "students": 1680,
+  "createdAt": "2024-02-15T10:30:00"
+ },
+ {
+  "id": 9,
+  "title": "비즈니스 영어 회화",
+  "instructorId": 6,
+  "instructor": "제임스",
+  "category": "language",
+  "price": 45000,
+  "thumbnail": "https://picsum.photos/400/225?random=9",
+  "description": "실무에서 바로 사용할 수 있는 비즈니스 영어를 학습합니다. 이메일, 미팅, 프레젠테이션 영어를 다룹니다.",
+  "curriculum": [
+   {
+    "id": 14,
+    "title": "섹션 1: 비즈니스 이메일",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 26,
+      "title": "이메일 기본 구조",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 1200,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 27,
+      "title": "상황별 이메일 작성",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 1600,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 2800,
+  "level": "intermediate",
+  "rating": 4.4,
+  "reviews": 92,
+  "students": 1120,
+  "createdAt": "2024-02-20T10:30:00"
+ },
+ {
+  "id": 10,
+  "title": "SQL 데이터베이스 완벽 가이드",
+  "instructorId": 4,
+  "instructor": "김데이터",
+  "category": "data",
+  "price": 49000,
+  "thumbnail": "https://picsum.photos/400/225?random=10",
+  "description": "SQL 기초부터 고급 쿼리까지 학습합니다. MySQL, PostgreSQL 등 다양한 데이터베이스를 다룹니다.",
+  "curriculum": [
+   {
+    "id": 15,
+    "title": "섹션 1: SQL 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 28,
+      "title": "SELECT 문 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 1400,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 29,
+      "title": "WHERE 조건절",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 1600,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 16,
+    "title": "섹션 2: 조인과 서브쿼리",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 30,
+      "title": "테이블 조인",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 2000,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 31,
+      "title": "서브쿼리 활용",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 2200,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 7200,
+  "level": "beginner",
+  "rating": 4.7,
+  "reviews": 145,
+  "students": 1920,
+  "createdAt": "2024-02-25T10:30:00"
+ },
+ {
+  "id": 11,
+  "title": "TypeScript 실전 프로젝트",
+  "instructorId": 1,
+  "instructor": "홍길동",
+  "category": "programming",
+  "price": 75000,
+  "thumbnail": "https://picsum.photos/400/225?random=11",
+  "description": "TypeScript의 타입 시스템과 고급 기능을 학습합니다. 실전 프로젝트를 통해 실무 역량을 키웁니다.",
+  "curriculum": [
+   {
+    "id": 17,
+    "title": "섹션 1: TypeScript 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 32,
+      "title": "타입 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 1800,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 33,
+      "title": "인터페이스와 타입 별칭",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 2200,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 18,
+    "title": "섹션 2: 고급 타입",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 34,
+      "title": "제네릭",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 2400,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 35,
+      "title": "유틸리티 타입",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 2000,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 8400,
+  "level": "advanced",
+  "rating": 4.9,
+  "reviews": 187,
+  "students": 2450,
+  "createdAt": "2024-03-01T10:30:00"
+ },
+ {
+  "id": 12,
+  "title": "SNS 마케팅 실전",
+  "instructorId": 3,
+  "instructor": "박강사",
+  "category": "marketing",
+  "price": 42000,
+  "thumbnail": "https://picsum.photos/400/225?random=12",
+  "description": "인스타그램, 유튜브, 틱톡 등 SNS 플랫폼별 마케팅 전략을 학습합니다. 콘텐츠 기획과 성과 분석을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 19,
+    "title": "섹션 1: 플랫폼별 전략",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 36,
+      "title": "인스타그램 마케팅",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 1600,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 37,
+      "title": "유튜브 채널 운영",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 2000,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 3600,
+  "level": "beginner",
+  "rating": 4.5,
+  "reviews": 98,
+  "students": 1340,
+  "createdAt": "2024-03-05T10:30:00"
+ },
+ {
+  "id": 13,
+  "title": "AWS 클라우드 입문",
+  "instructorId": 7,
+  "instructor": "정클라우드",
+  "category": "programming",
+  "price": 89000,
+  "thumbnail": "https://picsum.photos/400/225?random=13",
+  "description": "AWS의 핵심 서비스를 학습합니다. EC2, S3, RDS, Lambda 등 실무에 필요한 서비스를 다룹니다.",
+  "curriculum": [
+   {
+    "id": 20,
+    "title": "섹션 1: AWS 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 38,
+      "title": "AWS 계정 생성",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 1000,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 39,
+      "title": "IAM 사용자 관리",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 21,
+    "title": "섹션 2: 컴퓨팅 서비스",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 40,
+      "title": "EC2 인스턴스",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 2400,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 41,
+      "title": "Lambda 함수",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 2200,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 7400,
+  "level": "intermediate",
+  "rating": 4.8,
+  "reviews": 167,
+  "students": 2100,
+  "createdAt": "2024-03-10T10:30:00"
+ },
+ {
+  "id": 14,
+  "title": "포토샵 실무 활용",
+  "instructorId": 2,
+  "instructor": "이영희",
+  "category": "design",
+  "price": 48000,
+  "thumbnail": "https://picsum.photos/400/225?random=14",
+  "description": "포토샵의 핵심 기능을 학습합니다. 사진 보정, 합성, 웹 디자인 등 실무 활용법을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 22,
+    "title": "섹션 1: 포토샵 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 42,
+      "title": "인터페이스 익히기",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 1200,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 43,
+      "title": "레이어 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 1600,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 23,
+    "title": "섹션 2: 사진 보정",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 44,
+      "title": "색상 보정",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 1800,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 45,
+      "title": "리터칭 기법",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 2000,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 6600,
+  "level": "beginner",
+  "rating": 4.6,
+  "reviews": 124,
+  "students": 1560,
+  "createdAt": "2024-03-15T10:30:00"
+ },
+ {
+  "id": 15,
+  "title": "스타트업 창업 가이드",
+  "instructorId": 8,
+  "instructor": "강창업",
+  "category": "business",
+  "price": 0,
+  "thumbnail": "https://picsum.photos/400/225?random=15",
+  "description": "스타트업 창업의 A to Z를 학습합니다. 아이디어 검증, 팀 빌딩, 투자 유치 등을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 24,
+    "title": "섹션 1: 창업 준비",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 46,
+      "title": "아이디어 발굴",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 1400,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 47,
+      "title": "시장 조사",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 3200,
+  "level": "beginner",
+  "rating": 4.4,
+  "reviews": 76,
+  "students": 890,
+  "createdAt": "2024-03-20T10:30:00"
+ },
+ {
+  "id": 16,
+  "title": "머신러닝 기초",
+  "instructorId": 4,
+  "instructor": "김데이터",
+  "category": "data",
+  "price": 85000,
+  "thumbnail": "https://picsum.photos/400/225?random=16",
+  "description": "머신러닝의 핵심 알고리즘을 학습합니다. scikit-learn을 활용한 실습을 진행합니다.",
+  "curriculum": [
+   {
+    "id": 25,
+    "title": "섹션 1: 머신러닝 개요",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 48,
+      "title": "머신러닝 소개",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 1600,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 49,
+      "title": "지도학습 vs 비지도학습",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 2000,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 26,
+    "title": "섹션 2: 분류 알고리즘",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 50,
+      "title": "로지스틱 회귀",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 2200,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 51,
+      "title": "결정 트리",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 2400,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 8200,
+  "level": "advanced",
+  "rating": 4.8,
+  "reviews": 142,
+  "students": 1780,
+  "createdAt": "2024-03-25T10:30:00"
+ },
+ {
+  "id": 17,
+  "title": "Vue.js 3 완벽 가이드",
+  "instructorId": 1,
+  "instructor": "홍길동",
+  "category": "programming",
+  "price": 65000,
+  "thumbnail": "https://picsum.photos/400/225?random=17",
+  "description": "Vue.js 3의 Composition API와 핵심 기능을 학습합니다. Pinia, Vue Router 등을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 27,
+    "title": "섹션 1: Vue.js 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 52,
+      "title": "Vue 인스턴스",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 1600,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 53,
+      "title": "템플릿 문법",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 28,
+    "title": "섹션 2: Composition API",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 54,
+      "title": "ref와 reactive",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 2000,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 55,
+      "title": "computed와 watch",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 2200,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 7600,
+  "level": "intermediate",
+  "rating": 4.7,
+  "reviews": 156,
+  "students": 1950,
+  "createdAt": "2024-04-01T10:30:00"
+ },
+ {
+  "id": 18,
+  "title": "Swift iOS 앱 개발",
+  "instructorId": 5,
+  "instructor": "최모바일",
+  "category": "mobile",
+  "price": 72000,
+  "thumbnail": "https://picsum.photos/400/225?random=18",
+  "description": "Swift와 SwiftUI를 활용한 iOS 앱 개발을 학습합니다. 앱스토어 배포까지 전 과정을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 29,
+    "title": "섹션 1: Swift 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 56,
+      "title": "Swift 문법",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 2000,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 57,
+      "title": "옵셔널과 에러 처리",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 30,
+    "title": "섹션 2: SwiftUI",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 58,
+      "title": "SwiftUI 기초",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "duration": 2200,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 59,
+      "title": "레이아웃과 네비게이션",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "duration": 2400,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 8400,
+  "level": "intermediate",
+  "rating": 4.6,
+  "reviews": 118,
+  "students": 1420,
+  "createdAt": "2024-04-05T10:30:00"
+ },
+ {
+  "id": 19,
+  "title": "일러스트레이터 마스터",
+  "instructorId": 2,
+  "instructor": "이영희",
+  "category": "design",
+  "price": 52000,
+  "thumbnail": "https://picsum.photos/400/225?random=19",
+  "description": "Adobe Illustrator를 활용한 벡터 디자인을 학습합니다. 로고, 아이콘, 캐릭터 디자인 등을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 31,
+    "title": "섹션 1: 일러스트레이터 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 60,
+      "title": "펜 도구 마스터",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "duration": 1800,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 61,
+      "title": "패스파인더 활용",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "duration": 1600,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 3400,
+  "level": "beginner",
+  "rating": 4.5,
+  "reviews": 89,
+  "students": 1080,
+  "createdAt": "2024-04-10T10:30:00"
+ },
+ {
+  "id": 20,
+  "title": "Git & GitHub 완벽 입문",
+  "instructorId": 1,
+  "instructor": "홍길동",
+  "category": "programming",
+  "price": 0,
+  "thumbnail": "https://picsum.photos/400/225?random=20",
+  "description": "Git과 GitHub를 활용한 버전 관리를 학습합니다. 협업 워크플로우와 브랜치 전략을 다룹니다.",
+  "curriculum": [
+   {
+    "id": 32,
+    "title": "섹션 1: Git 기초",
+    "order": 1,
+    "lessons": [
+     {
+      "id": 62,
+      "title": "Git 설치와 설정",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "duration": 1000,
+      "order": 1,
+      "isPreview": true
+     },
+     {
+      "id": 63,
+      "title": "커밋과 브랜치",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "duration": 1800,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   },
+   {
+    "id": 33,
+    "title": "섹션 2: GitHub 협업",
+    "order": 2,
+    "lessons": [
+     {
+      "id": 64,
+      "title": "Pull Request",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "duration": 1600,
+      "order": 1,
+      "isPreview": false
+     },
+     {
+      "id": 65,
+      "title": "충돌 해결",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "duration": 1400,
+      "order": 2,
+      "isPreview": false
+     }
+    ]
+   }
+  ],
+  "duration": 5800,
+  "level": "beginner",
+  "rating": 4.8,
+  "reviews": 234,
+  "students": 3200,
+  "createdAt": "2024-04-15T10:30:00"
+ }
+]

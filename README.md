@@ -2,6 +2,8 @@
 
 온라인 강의 플랫폼은 HTML, CSS, JavaScript로 구현된 웹 애플리케이션입니다. 강의 탐색, 수강 신청, 학습 진도 관리, 수강 후기 등의 기능을 제공합니다.
 
+> **UI/UX 디자인 강의 실습용** - [docs/practice-guide/00-practice-guide-index.md](docs/practice-guide/00-practice-guide-index.md)에서 단계별 실습 가이드를 확인하세요.
+
 ## 주요 기능
 
 ### 1. 강의 탐색

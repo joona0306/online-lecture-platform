@@ -9,82 +9,16 @@
   <link rel="stylesheet" href="css/responsive.css" />
  </head>
  <body>
-  <!-- 헤더 -->
-  <header class="header">
-   <div class="container">
-    <div class="header-content">
-     <div class="logo">
-      <a href="index.html">
-       <span class="logo-icon">🔧</span>
-       <span class="logo-text">EduEdu</span>
-      </a>
-     </div>
-
-     <div class="header-center">
-      <!-- 검색 -->
-      <div class="search-box">
-       <label class="sr-only" for="searchInput">강의 검색</label>
-       <span class="search-icon">🔍</span>
-       <input
-        id="searchInput"
-        type="text"
-        placeholder="강의를 검색해보세요"
-        autocomplete="off"
-       />
-       <div class="search-dropdown" id="searchDropdown" style="display: none">
-        <div class="search-dropdown-header">
-         <span>최근 검색어</span>
-         <button class="clear-search" id="clearSearch">전체 삭제</button>
-        </div>
-        <div class="recent-searches" id="recentSearches"></div>
-        <div class="search-dropdown-header">
-         <span>🏔️ 추천 검색어</span>
-        </div>
-        <div class="recommended-searches">
-         <a href="courses.html?query=UX/UI 디자인">UX/UI 디자인</a>
-         <a href="courses.html?query=웹퍼블리싱">웹퍼블리싱</a>
-         <a href="courses.html?query=웹디자인">웹디자인</a>
-        </div>
-       </div>
-      </div>
-     </div>
-
-     <div class="header-actions">
-      <!-- 사용자 -->
-      <div class="user-menu">
-       <a href="login.html" class="btn btn-ghost" id="loginBtn">로그인</a>
-       <div
-        class="user-profile-wrapper"
-        id="userProfileWrapper"
-        style="display: none"
-       >
-        <button class="user-profile-btn" id="userProfileBtn">
-         <img
-          src="https://picsum.photos/40/40?random=100"
-          alt="프로필"
-          class="user-avatar"
-          id="userAvatar"
-         />
-         <span id="userName"></span>
-         <span class="dropdown-icon">▼</span>
-        </button>
-        <div class="user-dropdown" id="userDropdown" style="display: none">
-         <a href="profile.html">마이 페이지</a>
-         <a href="dashboard.html">내 강의보기</a>
-         <a href="#" id="transactionLink">거래내역</a>
-         <a href="#" id="logoutLink">로그아웃</a>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </header>
+  <!-- 헤더 (웹 컴포넌트) -->
+  <app-header></app-header>
 
   <!-- 학습 대시보드 섹션 -->
   <section class="dashboard-section">
    <div class="container">
-    <h1 class="section-title">학습 대시보드</h1>
+    <div class="dashboard-header">
+     <h1 class="section-title">학습 대시보드</h1>
+     <a href="courses.html" class="btn btn-primary">새 강의 둘러보기</a>
+    </div>
 
     <!-- 학습 진도 요약 -->
     <div class="dashboard-summary" id="dashboardSummary">
@@ -117,27 +51,10 @@
    </div>
   </section>
 
-  <!-- 푸터 -->
-  <footer class="footer">
-   <div class="container">
-    <div class="footer-content">
-     <div class="footer-section">
-      <h3>회사 정보</h3>
-      <p>온라인 강의 플랫폼</p>
-     </div>
-     <div class="footer-section">
-      <h3>고객센터</h3>
-      <p>전화: 1588-0000</p>
-      <p>이메일: support@learn.com</p>
-     </div>
-    </div>
-   </div>
-  </footer>
+  <!-- 푸터 (웹 컴포넌트) -->
+  <app-footer></app-footer>
 
-  <!-- 스크립트 -->
-  <script src="js/storage.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/header.js"></script>
-  <script src="js/dashboard.js"></script>
+  <!-- ES 모듈 방식의 앱 진입점 -->
+  <script type="module" src="js/app.js" data-page="dashboard"></script>
  </body>
 </html>
