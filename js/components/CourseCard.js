@@ -172,13 +172,28 @@ class CourseCard extends HTMLElement {
  * @example
  * container.innerHTML = renderCourseCards(courses);
  */
+/**
+ * 강의의 첫 번째 레슨 ID를 반환합니다.
+ * @param {Object} course - 강의 객체
+ * @returns {number} 첫 번째 레슨 ID (없으면 1)
+ */
+function getFirstLessonId(course) {
+ if (!course?.curriculum?.length) return 1;
+ for (const section of course.curriculum) {
+  if (section.lessons?.length) {
+   return section.lessons[0].id;
+  }
+ }
+ return 1;
+}
+
 export function renderCourseCard(course, enrollment = null) {
  const progress = enrollment?.progress || 0;
  const showProgress = enrollment !== null;
 
  const linkUrl =
   showProgress && progress > 0
-   ? `course-player.html?courseId=${course.id}&lessonId=1`
+   ? `course-player.html?courseId=${course.id}&lessonId=${getFirstLessonId(course)}`
    : `course-detail.html?id=${course.id}`;
 
  return `

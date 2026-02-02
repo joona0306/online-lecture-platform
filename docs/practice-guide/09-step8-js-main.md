@@ -45,12 +45,24 @@ export function setupPlaceholderLinks() {
 
 import { formatPrice, renderStars, escapeHtml } from "../modules/utils.js";
 
+/**
+ * 강의의 첫 번째 레슨 ID를 반환합니다.
+ * 강의마다 레슨 ID가 다르므로(예: 강의1은 1~5, 강의2는 6~7) 첫 레슨 ID를 동적으로 사용합니다.
+ */
+function getFirstLessonId(course) {
+ if (!course?.curriculum?.length) return 1;
+ for (const section of course.curriculum) {
+  if (section.lessons?.length) return section.lessons[0].id;
+ }
+ return 1;
+}
+
 export function renderCourseCard(course, enrollment = null) {
  const progress = enrollment?.progress || 0;
  const showProgress = enrollment !== null;
  const linkUrl =
   showProgress && progress > 0
-   ? `course-player.html?courseId=${course.id}&lessonId=1`
+   ? `course-player.html?courseId=${course.id}&lessonId=${getFirstLessonId(course)}`
    : `course-detail.html?id=${course.id}`;
 
  const students = course.students != null ? course.students : 0;

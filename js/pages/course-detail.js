@@ -209,7 +209,14 @@ function renderEnrolledStatus() {
  const progress = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
 
  // 마지막으로 학습한 레슨 ID 찾기 (없으면 첫 번째 레슨)
- const lastLessonId = currentEnrollment?.lastLessonId || 1;
+ const firstLessonId = (() => {
+  if (!currentCourse?.curriculum?.length) return 1;
+  for (const s of currentCourse.curriculum) {
+   if (s.lessons?.length) return s.lessons[0].id;
+  }
+  return 1;
+ })();
+ const lastLessonId = currentEnrollment?.lastLessonId || firstLessonId;
 
  return `
     <div class="enrolled-status">

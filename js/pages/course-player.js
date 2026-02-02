@@ -75,11 +75,14 @@ function loadCourse(courseId, lessonId) {
   return false;
  }
 
- // 레슨 찾기
- const lesson = findLesson(currentCourse, lessonId);
+ // 레슨 찾기 (지정된 ID가 없으면 첫 번째 레슨 사용)
+ let lesson = findLesson(currentCourse, lessonId);
  if (!lesson) {
-  alert("레슨을 찾을 수 없습니다.");
-  return false;
+  lesson = getFirstLesson(currentCourse);
+  if (!lesson) {
+   alert("레슨을 찾을 수 없습니다.");
+   return false;
+  }
  }
 
  currentLesson = lesson;
@@ -94,9 +97,26 @@ function loadCourse(courseId, lessonId) {
  * @returns {Object|null} 레슨 객체 또는 null
  */
 function findLesson(course, lessonId) {
+ if (!course?.curriculum) return null;
  for (const section of course.curriculum) {
-  const lesson = section.lessons.find((l) => l.id === lessonId);
+  const lesson = section.lessons?.find((l) => l.id === lessonId);
   if (lesson) return lesson;
+ }
+ return null;
+}
+
+/**
+ * 강의의 첫 번째 레슨을 반환합니다.
+ *
+ * @param {Object} course - 강의 객체
+ * @returns {Object|null} 첫 번째 레슨 또는 null
+ */
+function getFirstLesson(course) {
+ if (!course?.curriculum?.length) return null;
+ for (const section of course.curriculum) {
+  if (section.lessons?.length) {
+   return section.lessons[0];
+  }
  }
  return null;
 }

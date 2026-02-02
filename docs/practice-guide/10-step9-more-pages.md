@@ -190,6 +190,7 @@ const pageMap = {
 
 - `initCourseDetailPage()`: `getQueryParam("id")`로 ID 획득 → api에서 강의 조회 → DOM에 렌더링
 - `renderCourseDetail()`: 상단에 브레드크럼(`<nav class="breadcrumb">` + `courses.html` 링크) 렌더링
+- "이어서 학습하기"/"학습 시작하기" 링크: `lastLessonId` 없으면 해당 강의의 **첫 레슨 ID** 사용 (강의마다 레슨 ID가 다르므로)
 - "장바구니 담기" 클릭 시 storage의 장바구니에 추가 후 토스트/이동 처리
 
 ---
@@ -274,7 +275,9 @@ const pageMap = {
 **역할:** 수강 중인 강의의 영상/컨텐츠 재생.
 
 - `section` 내 비디오 또는 iframe/재생 UI
-- URL에서 강의 ID·챕터 등 받아 해당 강의 재생
+- URL 파라미터: `courseId`, `lessonId` (예: `course-player.html?courseId=1&lessonId=1`)
+- **레슨 ID 주의:** 강의마다 레슨 ID가 다릅니다(강의1: 1~5, 강의2: 6~7 등). `lessonId`가 없거나 해당 강의에 없으면 **첫 번째 레슨**으로 자동 이동합니다.
+- CourseCard, course-detail 등에서 링크할 때는 `getFirstLessonId(course)`로 해당 강의의 첫 레슨 ID를 사용하세요.
 - **스크립트:** `data-page="course-player"`, `initCoursePlayerPage()`
 
 ---
