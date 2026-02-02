@@ -10,6 +10,7 @@
 - 강의 카드(.course-card) 스타일
 - 폼(.form-group, input, select) 스타일
 - Swiper 네비게이션 버튼(.swiper-nav-btn) 스타일
+- 브레드크럼(.breadcrumb, .breadcrumb-link) 스타일
 
 ---
 
@@ -303,12 +304,58 @@
 
 ---
 
+### 6단계: 브레드크럼 스타일
+
+강의 상세 페이지 등에서 "강의 목록"으로 돌아가는 네비게이션 링크용 스타일입니다.
+
+```css
+/* ============================================================================
+   Breadcrumb
+   ============================================================================ */
+
+.breadcrumb {
+ margin-bottom: var(--spacing-lg);
+}
+
+.breadcrumb-link {
+ display: inline-flex;
+ align-items: center;
+ gap: var(--spacing-xs);
+ color: var(--color-muted-foreground);
+ text-decoration: none;
+ font-size: var(--font-size-sm);
+ font-weight: 500;
+ padding: var(--spacing-xs) var(--spacing-sm);
+ border-radius: var(--radius-md);
+ transition: all var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+ color: var(--color-primary);
+ background-color: var(--color-muted);
+}
+
+.breadcrumb-link:focus-visible {
+ outline: 2px solid var(--color-primary);
+ outline-offset: 2px;
+}
+
+.breadcrumb-link svg {
+ flex-shrink: 0;
+}
+```
+
+**저장 후 확인:** 9단계에서 강의 상세 페이지를 추가하면, 상단 "← 강의 목록" 링크가 이 스타일로 표시됩니다.
+
+---
+
 ## 체크리스트
 
 - [ ] 버튼(.btn, .btn-primary, .btn-outline) 스타일 작성
 - [ ] 강의 카드(.course-card, thumbnail, content, title, instructor, meta, price) 스타일 작성
 - [ ] Swiper 네비(.swiper-nav-btn, .swiper-nav-prev/next) 스타일 작성
 - [ ] 폼(.form-group, input, textarea, select) 스타일 작성
+- [ ] 브레드크럼(.breadcrumb, .breadcrumb-link) 스타일 작성
 - [ ] 저장 후 메인 페이지에서 버튼·인기/신규 영역·이전/다음 버튼 확인
 
 ---
@@ -318,6 +365,7 @@
 - 메인 페이지 "강의 둘러보기", "무료로 시작하기" 버튼이 primary/outline 스타일로 보입니다.
 - 인기 강의·신규 강의 섹션 양쪽에 둥근 이전/다음 버튼이 보입니다. (8단계에서 카드가 채워지면 슬라이드 동작)
 - 로그인/회원가입 페이지(9단계에서 추가)에서 입력 필드에 포커스 시 테두리 색이 primary로 바뀝니다.
+- 강의 상세 페이지(9단계에서 추가) 상단에 "강의 목록" 브레드크럼 링크가 보입니다.
 
 ---
 

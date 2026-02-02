@@ -97,6 +97,14 @@ export function renderCourseDetail() {
  const isEnrolled = currentEnrollment != null;
 
  container.innerHTML = `
+    <nav class="breadcrumb" aria-label="페이지 경로">
+      <a href="courses.html" class="breadcrumb-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        강의 목록
+      </a>
+    </nav>
     <div class="course-detail-header">
       ${renderThumbnail()}
       ${renderCourseInfo(isEnrolled)}

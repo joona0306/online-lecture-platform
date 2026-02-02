@@ -174,12 +174,14 @@ const pageMap = {
 
 ### 3단계: 강의 상세 페이지 (course-detail.html)
 
-**역할:** URL 쿼리 `?id=1` 등으로 강의 ID를 받아 한 건만 표시, "장바구니 담기" 등 버튼.
+**역할:** URL 쿼리 `?id=1` 등으로 강의 ID를 받아 한 건만 표시, "장바구니 담기" 등 버튼, **강의 목록으로 이동** 링크.
 
 **HTML 구조 요약:**
 
 - `section.course-detail-section` > `container`
-  - `div#courseDetailContent` — 상세 정보를 동적으로 채움 (제목, 강사, 가격, 소개, 커리큘럼 등)
+  - `div#courseDetailContent` — 상세 정보를 동적으로 채움
+    - `nav.breadcrumb` > `a.breadcrumb-link[href="courses.html"]` — "← 강의 목록" 링크 (상단 네비게이션)
+    - 제목, 강사, 가격, 소개, 커리큘럼 등
   - 로딩 중에는 `div.loading-spinner` 표시
 
 **스크립트:** `data-page="course-detail"`
@@ -187,6 +189,7 @@ const pageMap = {
 **course-detail.js 요약:**
 
 - `initCourseDetailPage()`: `getQueryParam("id")`로 ID 획득 → api에서 강의 조회 → DOM에 렌더링
+- `renderCourseDetail()`: 상단에 브레드크럼(`<nav class="breadcrumb">` + `courses.html` 링크) 렌더링
 - "장바구니 담기" 클릭 시 storage의 장바구니에 추가 후 토스트/이동 처리
 
 ---
@@ -281,7 +284,7 @@ const pageMap = {
 - [ ] app.js의 `detectCurrentPage()`, `initializePage()` 동작 이해
 - [ ] 각 HTML에 `<app-header>`, `<app-footer>`, `data-page` 지정
 - [ ] courses.html + courses.js: 강의 목록, 필터, 정렬, 페이지네이션
-- [ ] course-detail.html + course-detail.js: 상세 표시, 장바구니 담기
+- [ ] course-detail.html + course-detail.js: 상세 표시, 강의 목록 링크, 장바구니 담기
 - [ ] login.html, signup.html + auth.js: 로그인/회원가입 후 리다이렉트
 - [ ] dashboard.html + dashboard.js: 수강 중/완료/최근 강의
 - [ ] cart.html, checkout.html + cart.js, checkout.js
@@ -294,7 +297,7 @@ const pageMap = {
 ## 확인 사항
 
 - 메인 → "강의 둘러보기" → courses.html에서 필터/정렬 시 목록이 바뀝니다.
-- 강의 카드 클릭 → course-detail.html?id=1 → "장바구니 담기" 동작합니다.
+- 강의 카드 클릭 → course-detail.html?id=1 → 상단 "강의 목록" 링크로 courses.html 이동, "장바구니 담기" 동작합니다.
 - 로그인/회원가입 후 index 또는 redirect URL로 이동합니다.
 - 로그인 후 "학습 대시보드"에서 수강 중인 강의가 보입니다.
 - app.js는 `data-page`에 따라 해당 페이지만 init 하므로, 각 페이지 JS는 자신의 DOM만 다루면 됩니다.
